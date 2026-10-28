@@ -1,0 +1,395 @@
+{
+  "meta": {
+    "siteName": "James Mvuye · LEARNMORE-DATA",
+    "home": {
+      "title": "James Mvuye — Data Analyst, Dozent und Forschungsberater",
+      "description": "Portfolio von James Mvuye (LEARNMORE-DATA): Datenanalyse, Dashboards, Statistik, Gesundheit und Epidemiologie, QGIS-Kartografie sowie Schulungen in Daten und KI."
+    },
+    "projects": {
+      "title": "Datenanalyse-Projekte",
+      "description": "Projektkatalog: Gesundheit und Epidemiologie, Business Intelligence, Statistik, QGIS-Kartografie. Methoden, Dashboards und zugehörige Dateien."
+    },
+    "dashboards": {
+      "title": "Interaktive Dashboards",
+      "description": "Dashboard-Galerie (Power BI, Python, R, Excel) mit Kennzahlen, Filtern und Quellen. Demodaten klar gekennzeichnet."
+    },
+    "about": {
+      "title": "Über James Mvuye",
+      "description": "Profil, Positionierung, Kompetenzen und Werkzeuge von James Mvuye, Data Analyst, Data Instructor und Forschungsberater."
+    },
+    "services": {
+      "title": "Dienstleistungen in Daten und Forschung",
+      "description": "Datenanalyse, Dashboards, Statistik, Forschungsbegleitung, Gesundheit, QGIS-Kartografie und Schulungen in Daten und KI."
+    },
+    "contact": {
+      "title": "Kontakt und Zusammenarbeit",
+      "description": "Fragen Sie bei James Mvuye (LEARNMORE-DATA) eine Leistung, ein Angebot an oder schlagen Sie eine Zusammenarbeit vor."
+    }
+  },
+  "nav": {
+    "home": "Startseite",
+    "projects": "Projekte",
+    "dashboards": "Dashboards",
+    "about": "Über mich",
+    "services": "Leistungen",
+    "contact": "Kontakt",
+    "skip": "Zum Hauptinhalt springen",
+    "main": "Hauptnavigation",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "language": "Sprache",
+    "theme": "Design wechseln",
+    "themeLight": "Helles Design",
+    "themeDark": "Dunkles Design"
+  },
+  "common": {
+    "download": "Herunterladen",
+    "view": "Ansehen",
+    "hide": "Ausblenden",
+    "seeAll": "Alle ansehen",
+    "viewProject": "Projekt ansehen",
+    "backToProjects": "Zurück zu den Projekten",
+    "tools": "Werkzeuge",
+    "domain": "Bereich",
+    "date": "Datum",
+    "synthetic": "Synthetische Daten",
+    "comingSoon": "Demnächst verfügbar",
+    "notConfigured": "Nicht konfiguriert",
+    "loading": "Wird geladen…",
+    "size": "Größe",
+    "externalLink": "öffnet sich in einem neuen Tab",
+    "missing": "k. A."
+  },
+  "domains": {
+    "health": "Gesundheit und Epidemiologie",
+    "business": "Business Intelligence",
+    "stats": "Statistik und Forschung",
+    "gis": "Kartografie und QGIS",
+    "other": "Weitere Analysen"
+  },
+  "hero": {
+    "eyebrow": "LEARNMORE-DATA",
+    "role": "Data Analyst | Data Instructor | Forschungsberater",
+    "intro": "Ich unterstütze Unternehmen, Forschende und Organisationen dabei, ihre Daten mithilfe von Datenanalyse, Visualisierung und künstlicher Intelligenz in Entscheidungen zu verwandeln.",
+    "ctaProjects": "Meine Projekte entdecken",
+    "ctaContact": "Kontakt aufnehmen",
+    "photoAlt": "Professionelles Porträt von James Mvuye",
+    "placeholderTitle": "Foto folgt",
+    "placeholderHint": "public/images/james-mvuye.jpg hinzufügen",
+    "audience": "Für Unternehmen, NGOs, Forschende und Organisationen"
+  },
+  "home": {
+    "featuredTitle": "Ausgewählte Projekte",
+    "featuredLead": "Fallstudien, die das Vorgehen zeigen: Fragestellung, Daten, Methode, Ergebnis und Grenzen.",
+    "syntheticNote": "Die Projekte dieser Präsentation nutzen synthetische Daten, auf jeder Seite gekennzeichnet: Sie veranschaulichen Methoden, keine realen Ergebnisse.",
+    "skillsTitle": "Kompetenzen und Werkzeuge",
+    "skillsLead": "Beherrschte Werkzeuge im Dienst einer präzisen Fragestellung, keine Logo-Wand.",
+    "vizTitle": "Vorschau der Visualisierungen",
+    "vizLead": "Ein interaktiver Ausschnitt des Demo-Vertriebsdashboards (fiktive Daten).",
+    "vizCta": "Alle Dashboards erkunden",
+    "servicesTitle": "Leistungen",
+    "servicesLead": "Von der punktuellen Analyse bis zur vollständigen Begleitung eines Forschungs- oder Reporting-Projekts.",
+    "aboutTitle": "Über mich",
+    "aboutText": "Als Data Analyst, Data Instructor und Forschungsberater begleite ich Organisationen, die strenge, reproduzierbare und für Entscheidungsträger verständliche Analysen wünschen.",
+    "aboutCta": "Mein Profil lesen",
+    "ctaTitle": "Ein Datenprojekt starten?",
+    "ctaText": "Sprechen wir über Ihre Fragen, Ihre Daten und das benötigte Ergebnis.",
+    "ctaButton": "Zusammenarbeit vorschlagen"
+  },
+  "skills": {
+    "analysis": { "title": "Datenanalyse und -aufbereitung", "text": "Reproduzierbare Bereinigung, Transformation, Qualitätskontrolle und explorative Analyse." },
+    "viz": { "title": "Visualisierung und Reporting", "text": "Lesbare Dashboards und Berichte mit definierten, belegten Kennzahlen." },
+    "stats": { "title": "Statistik und Forschung", "text": "Testwahl, Effektstärken, Konfidenzintervalle und dokumentierte Methoden." },
+    "gis": { "title": "Kartografie und Raumanalyse", "text": "Professionelle Karten und Raumanalysen mit QGIS." },
+    "ai": { "title": "KI für Daten", "text": "Sinnvoller Einsatz von KI zur Beschleunigung der Analyse, mit menschlicher Überprüfung der Ergebnisse." }
+  },
+  "projectsPage": {
+    "title": "Projekte",
+    "lead": "Jedes Projekt beschreibt die Fragestellung, die Daten, die Methode, die Ergebnisse und ihre Grenzen.",
+    "search": "Projekt oder Werkzeug suchen…",
+    "searchLabel": "Suche",
+    "filterDomain": "Bereich",
+    "filterTool": "Werkzeug",
+    "all": "Alle",
+    "allTools": "Alle Werkzeuge",
+    "count": "{count, plural, =0 {Keine Projekte} one {# Projekt} other {# Projekte}}",
+    "reset": "Filter zurücksetzen",
+    "noResults": "Kein Projekt entspricht Ihrer Suche.",
+    "readMore": "Details ansehen",
+    "translationPartial": "Teilweise übersetzt"
+  },
+  "project": {
+    "syntheticBanner": "Demonstrationsprojekt: Alle Daten sind synthetisch (fiktiv). Die Zahlen veranschaulichen die Methode und beschreiben keine reale Situation.",
+    "fallbackNotice": "Dieses Projekt ist noch nicht auf {requested} verfügbar. Der Inhalt wird auf {shown} angezeigt.",
+    "summary": "Zusammenfassung",
+    "context": "Kontext",
+    "problem": "Fragestellung",
+    "objectives": "Ziele",
+    "data": "Daten",
+    "dataSources": "Quellen",
+    "variables": "Variablenverzeichnis",
+    "varName": "Variable",
+    "varType": "Typ",
+    "varDesc": "Beschreibung",
+    "cleaning": "Bereinigung und Aufbereitung",
+    "methodology": "Analysemethodik",
+    "tools": "Werkzeuge und Technologien",
+    "dashboard": "Dashboard und Visualisierungen",
+    "dashboardText": "Interaktive Demonstration auf Basis der synthetischen Projektdaten.",
+    "openDashboard": "Dashboard öffnen",
+    "results": "Ergebnisse",
+    "recommendations": "Interpretation und Empfehlungen",
+    "limitations": "Grenzen der Analyse",
+    "files": "Dateien und Quellcode",
+    "filesLead": "Es werden nur veröffentlichbare Dateien angeboten. Die Daten sind fiktiv und frei zum Üben nutzbar.",
+    "github": "Quellcode auf GitHub",
+    "githubSoon": "GitHub-Repository folgt",
+    "related": "Ähnliche Projekte",
+    "sourceSynthetic": "Synthetischer, per Skript erzeugter Datensatz (fester Seed), ohne Bezug zu realen Personen, Unternehmen oder Orten.",
+    "projectDate": "Projektdatum",
+    "languages": "Verfügbare Sprachen",
+    "preview": "Vorschau",
+    "fileMissing": "Datei nicht verfügbar",
+    "fileKind": {
+      "csv": "CSV-Daten",
+      "xlsx": "Excel-Arbeitsmappe",
+      "xls": "Excel-Arbeitsmappe",
+      "pdf": "PDF-Dokument",
+      "py": "Python-Skript",
+      "r": "R-Skript",
+      "sql": "SQL-Abfragen",
+      "doc": "Dokumentation"
+    }
+  },
+  "dashboards": {
+    "title": "Dashboards",
+    "lead": "Demo-Galerie: Power BI, Python, R und Excel. Jedes Dashboard nennt seine Ziele, Kennzahlen und Quellen.",
+    "syntheticBanner": "Demos ausschließlich mit synthetischen (fiktiven) Daten, um Funktionen zu veranschaulichen.",
+    "toolPowerbi": "Power BI",
+    "toolPython": "Python",
+    "toolR": "R",
+    "toolExcel": "Excel",
+    "objectives": "Ziele",
+    "indicators": "Wichtige Kennzahlen",
+    "source": "Datenquelle",
+    "sourceValue": "Per Skript erzeugte synthetische Daten (siehe zugehöriges Projekt).",
+    "openDemo": "Demo öffnen",
+    "backToGallery": "Zurück zur Galerie",
+    "relatedProject": "Zugehöriges Projekt",
+    "official": "Offizielle Version",
+    "powerbiMissing": "Der offizielle Power-BI-Bericht ist noch nicht veröffentlicht. Er wird über die autorisierte Einbettungs-URL eingebunden (siehe README). Die obige Demo bildet seine Kennzahlen mit fiktiven Daten nach.",
+    "externalMissing": "Die gehostete Anwendung (Streamlit, Shiny …) ist noch nicht online. Die obige Demo bildet ihre Kennzahlen mit fiktiven Daten nach.",
+    "openExternal": "Gehostete Anwendung öffnen",
+    "downloadXlsx": "Excel-Arbeitsmappe herunterladen",
+    "loadingChart": "Diagramm wird geladen…",
+    "items": {
+      "sales": {
+        "title": "Vertriebsleistung über mehrere Regionen",
+        "summary": "Umsatz, Marge und Wachstum nach Region und Kategorie.",
+        "objectives": "Die Vertriebsleistung verfolgen und die Regionen und Kategorien erkennen, die Wert schaffen.",
+        "indicators": ["Umsatz", "Marge und Margenquote", "Bestellungen und Bestellwert", "12-Monats-Wachstum"]
+      },
+      "epi": {
+        "title": "Wöchentliche epidemiologische Überwachung",
+        "summary": "Inzidenz je Zone, gleitendes Mittel, Alarmschwelle und Vollständigkeit.",
+        "objectives": "Ungewöhnliche Inzidenzanstiege schnell erkennen und die Qualität der Meldungen überwachen.",
+        "indicators": ["Gemeldete Fälle", "Inzidenz pro 10.000 Einwohner", "Alarmwochen", "Nicht gemeldete Wochen"]
+      },
+      "trial": {
+        "title": "Vergleich zweier Gruppen",
+        "summary": "Score-Veränderung je Gruppe, Mittelwertdifferenz und Konfidenzintervall.",
+        "objectives": "Die Veränderung eines Scores zwischen Kontroll- und Interventionsgruppe samt Unsicherheit vergleichen.",
+        "indicators": ["Gruppengrößen und Verluste", "Mittlere Veränderung je Gruppe", "Differenz und 95-%-KI", "Zusammenhang Ausgangs-/Follow-up-Score"]
+      },
+      "budget": {
+        "title": "Budgetverfolgung eines Programms",
+        "summary": "Plan, Ist, Abweichung und Ausführungsquote je Budgetposition.",
+        "objectives": "Die Budgetausführung visualisieren und Positionen erkennen, die vom Plan abweichen.",
+        "indicators": ["Geplantes Budget", "Ist bis heute", "Ausführungsquote", "Abweichung je Position"]
+      }
+    },
+    "ui": {
+      "filters": "Filter",
+      "all": "Alle",
+      "year": "Jahr",
+      "region": "Region",
+      "category": "Kategorie",
+      "zone": "Zone",
+      "group": "Gruppe",
+      "line": "Budgetposition",
+      "definitions": "Definitionen der Kennzahlen",
+      "noData": "Keine Daten für diese Auswahl.",
+      "missingData": "Fehlende Daten",
+      "regions": { "North": "Nord", "South": "Süd", "East": "Ost", "West": "West" },
+      "categories": { "Hardware": "Hardware", "Software": "Software", "Services": "Dienstleistungen", "Training": "Schulung" },
+      "groups": { "control": "Kontrolle", "intervention": "Intervention" },
+      "lines": { "Personnel": "Personal", "Transport": "Transport", "Equipment": "Ausstattung", "Training": "Schulung", "Communication": "Kommunikation", "Other": "Sonstiges" },
+      "sales": {
+        "revenue": "Umsatz",
+        "margin": "Marge",
+        "marginRate": "Margenquote",
+        "orders": "Bestellungen",
+        "aov": "Durchschnittlicher Bestellwert",
+        "monthlyTitle": "Monatsumsatz",
+        "categoryTitle": "Umsatz nach Kategorie",
+        "regionTitle": "Marge nach Region",
+        "defRevenue": "Umsatz: Summe der Verkäufe in US-Dollar in der Auswahl.",
+        "defMargin": "Marge: Umsatz minus Kosten. Margenquote: Marge geteilt durch Umsatz.",
+        "defAov": "Durchschnittlicher Bestellwert: Umsatz geteilt durch die Anzahl der Bestellungen."
+      },
+      "epi": {
+        "cases": "Gemeldete Fälle",
+        "incidence": "Mittlere Inzidenz",
+        "alerts": "Alarmwochen",
+        "missing": "Nicht gemeldete Wochen",
+        "per10k": "pro 10.000 Einw.",
+        "trendTitle": "Wöchentliche Inzidenz und Alarmschwelle",
+        "casesTitle": "Gemeldete Fälle pro Woche",
+        "incidenceSeries": "Inzidenz",
+        "movingAvg": "Gleitendes Mittel 4 Wo.",
+        "threshold": "Alarmschwelle",
+        "week": "Woche",
+        "defIncidence": "Inzidenz: Fälle / Bevölkerung × 10.000. Gleitendes Mittel: Mittelwert der letzten 4 Wochen (mindestens 2 Beobachtungen).",
+        "defThreshold": "Alarmschwelle: Mittelwert + 2 Standardabweichungen der Inzidenz der Zone. Nicht gemeldete Wochen zählen nie als null Fälle.",
+        "missingNote": "{count, plural, =0 {Alle Wochen sind für diese Auswahl gemeldet.} one {# nicht gemeldete Woche in dieser Auswahl (als Lücke dargestellt).} other {# nicht gemeldete Wochen in dieser Auswahl (als Lücken dargestellt).}}"
+      },
+      "trial": {
+        "n": "Teilnehmende",
+        "lost": "Verluste (Follow-up)",
+        "diff": "Differenz der Veränderung",
+        "ci": "95-%-KI",
+        "meanChange": "Mittlere Score-Veränderung",
+        "scatterTitle": "Ausgangs- und Follow-up-Score",
+        "meanTitle": "Mittlere Veränderung je Gruppe (± 95-%-KI)",
+        "baseline": "Ausgangsscore",
+        "followup": "Follow-up-Score",
+        "points": "Punkte",
+        "defChange": "Veränderung: Follow-up-Score minus Ausgangsscore. Analyse vollständiger Fälle.",
+        "defCi": "95-%-KI der Differenz: Welch-Näherung (t-Verteilung). Orientierender Wert auf synthetischen Daten.",
+        "lostNote": "{count} Teilnehmende ohne Follow-up-Score sind von den Mittelwerten ausgeschlossen."
+      },
+      "budget": {
+        "planned": "Geplantes Budget",
+        "actual": "Ist bis heute",
+        "rate": "Ausführungsquote",
+        "variance": "Abweichung",
+        "byLineTitle": "Plan und Ist je Position (ausgeführte Monate)",
+        "monthlyTitle": "Kumulierter Plan und Ist je Monat",
+        "tableTitle": "Vorschau der Excel-Arbeitsmappe",
+        "month": "Monat",
+        "planned_s": "Plan",
+        "actual_s": "Ist",
+        "defRate": "Ausführungsquote: Ist / Plan über die ausgeführten Monate (Januar bis September). Abweichung: Ist − Plan.",
+        "defMissing": "Für Oktober bis Dezember gibt es kein Ist: Sie bleiben leer und zählen nicht als null."
+      }
+    }
+  },
+  "about": {
+    "title": "Über mich",
+    "lead": "Data Analyst, Data Instructor und Forschungsberater.",
+    "profileTitle": "Profil",
+    "profile": [
+      "Mein Name ist James Mvuye, ich arbeite unter der Marke LEARNMORE-DATA. Ich unterstütze Unternehmen, Forschende und Organisationen dabei, ihre Daten mithilfe von Datenanalyse, Visualisierung und künstlicher Intelligenz in Entscheidungen zu verwandeln.",
+      "Außerdem unterrichte ich digitale Kartografie und Raumanalyse mit QGIS und begleite Forschungsarbeiten, die ein klares, dokumentiertes statistisches Vorgehen erfordern."
+    ],
+    "approachTitle": "Mein Vorgehen",
+    "approach": [
+      { "title": "Sorgfalt", "text": "Eine präzise Fragestellung, beschriebene Daten, eine begründete Methode." },
+      { "title": "Transparenz", "text": "Annahmen, Grenzen und fehlende Daten werden stets sichtbar gemacht." },
+      { "title": "Reproduzierbarkeit", "text": "Skripte und Datensätze werden bereitgestellt, sofern ihre Veröffentlichung erlaubt ist." },
+      { "title": "Klarheit", "text": "Ergebnisse werden einfach erklärt, um Entscheidungen zu ermöglichen." }
+    ],
+    "toolsTitle": "Werkzeuge",
+    "toolsLead": "Python, R, SQL, Excel, Power BI, QGIS und Jupyter.",
+    "languagesTitle": "Sprachen",
+    "educationTitle": "Ausbildung",
+    "certificationsTitle": "Zertifizierungen",
+    "placeholder": "Noch zu ergänzender Abschnitt: Hier werden nur überprüfte Angaben veröffentlicht.",
+    "trainingTitle": "QGIS-Schulung von LEARNMORE-DATA",
+    "trainingText": "Ein Lernpfad mit 12 Modulen, von der Einführung in GIS über Raumanalyse, Rasteranalyse und Satellitendaten bis zum Einsatz von KI mit QGIS.",
+    "trainingCta": "Schulung entdecken",
+    "siteLanguagesTitle": "Website in 4 Sprachen",
+    "siteLanguagesText": "Diese Website ist auf Französisch, Englisch, Spanisch und Deutsch verfügbar. Die nicht französischen Fassungen sind Arbeitsübersetzungen und nicht zertifiziert."
+  },
+  "services": {
+    "title": "Leistungen",
+    "lead": "Leistungen, zugeschnitten auf Ihre Fragen, Ihre Daten und Ihren Zeitplan. Es werden keine Preise angezeigt: Jede Anfrage wird individuell besprochen und angeboten.",
+    "items": {
+      "analysis": { "title": "Datenanalyse und -aufbereitung", "text": "Bereinigung, Strukturierung, Qualitätskontrolle und explorative Analyse Ihrer Datensätze (Excel, Python, R, SQL)." },
+      "dashboards": { "title": "Dashboards und Reporting", "text": "Klare Dashboards und automatisierte Berichte (Power BI, Excel, Python) mit definierten, belegten Kennzahlen." },
+      "stats": { "title": "Statistische Analyse", "text": "Auswahl von Tests, Modellen und Effektstärken sowie Interpretation, mit reproduzierbaren Skripten." },
+      "research": { "title": "Begleitung wissenschaftlicher Forschung", "text": "Unterstützung bei Methodik, Analyse und Darstellung der Ergebnisse Ihrer Arbeiten." },
+      "health": { "title": "Gesundheitsdaten und Epidemiologie", "text": "Überwachungskennzahlen, Inzidenzraten und Datenqualität unter Wahrung der Vertraulichkeit." },
+      "gis": { "title": "Kartografie und Raumanalyse (QGIS)", "text": "Professionelle Karten, Nähe- und Erreichbarkeitsanalysen, Verarbeitung von Geodaten." },
+      "training": { "title": "Schulungen in Daten und KI", "text": "Praxisnahe Schulungen in Datenanalyse, QGIS und sinnvollem KI-Einsatz, für Teams und Einzelpersonen." }
+    },
+    "processTitle": "So arbeiten wir",
+    "process": [
+      { "title": "Klärung", "text": "Fragen, verfügbare Daten, Rahmenbedingungen und erwartete Ergebnisse." },
+      { "title": "Analyse", "text": "Datenaufbereitung, dokumentierte Methode, Validierungspunkte." },
+      { "title": "Lieferung", "text": "Dashboard, Bericht oder Schulung, mit Skripten und Dokumentation." },
+      { "title": "Nachbetreuung", "text": "Fragen, Anpassungen und Kompetenztransfer." }
+    ],
+    "ctaService": "Leistung anfragen",
+    "ctaQuote": "Angebot anfragen",
+    "ctaCollab": "Zusammenarbeit vorschlagen",
+    "trainingLink": "QGIS-Schulung ansehen",
+    "confidentiality": "Sensible Daten (Gesundheit, personenbezogen) werden nach Ihren Vertraulichkeitsregeln behandelt; ohne Erlaubnis wird nichts veröffentlicht."
+  },
+  "contact": {
+    "title": "Kontakt",
+    "lead": "Beschreiben Sie Ihren Bedarf: Leistung, Angebot oder Zusammenarbeit. Ich melde mich mit einer ersten Antwort.",
+    "formTitle": "Nachricht senden",
+    "fields": {
+      "name": "Vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "organization": "Organisation (optional)",
+      "type": "Art der Anfrage",
+      "service": "Betreffende Leistung",
+      "message": "Ihre Nachricht",
+      "consent": "Ich bin damit einverstanden, dass meine Angaben zur Beantwortung meiner Anfrage verwendet werden."
+    },
+    "types": {
+      "service": "Leistungsanfrage",
+      "quote": "Angebotsanfrage",
+      "collab": "Vorschlag zur Zusammenarbeit",
+      "other": "Andere Frage"
+    },
+    "anyService": "Nicht angegeben",
+    "send": "Nachricht senden",
+    "sending": "Wird gesendet…",
+    "success": "Vielen Dank, Ihre Nachricht wurde gesendet. Sie erhalten eine Antwort per E-Mail.",
+    "errors": {
+      "name": "Geben Sie Ihren Namen an (mindestens 2 Zeichen).",
+      "email": "Geben Sie eine gültige E-Mail-Adresse an.",
+      "message": "Ihre Nachricht muss mindestens 20 Zeichen lang sein.",
+      "consent": "Sie müssen der Verwendung Ihrer Angaben zustimmen.",
+      "type": "Wählen Sie eine Art der Anfrage.",
+      "tooMany": "Zu viele Versuche. Bitte versuchen Sie es in einigen Minuten erneut.",
+      "server": "Das Senden ist fehlgeschlagen. Versuchen Sie es später erneut oder nutzen Sie einen anderen Kontaktweg.",
+      "network": "Verbindung nicht möglich. Prüfen Sie Ihr Netzwerk und versuchen Sie es erneut.",
+      "fixFields": "Bitte korrigieren Sie die markierten Felder."
+    },
+    "notConfigured": "Das Senden per Formular ist auf dieser Website noch nicht aktiviert. Nutzen Sie bitte einen der Kontaktlinks daneben.",
+    "linksTitle": "Weitere Kontaktwege",
+    "links": { "linkedin": "LinkedIn", "github": "GitHub", "whatsapp": "WhatsApp", "email": "E-Mail" },
+    "linkSoon": "Link folgt",
+    "privacy": "Die eingegebenen Daten dienen ausschließlich der Beantwortung Ihrer Anfrage und werden nicht veröffentlicht."
+  },
+  "footer": {
+    "tagline": "Daten in Entscheidungen verwandeln.",
+    "navTitle": "Navigation",
+    "contactTitle": "Kontakt",
+    "rights": "Alle Rechte vorbehalten.",
+    "syntheticNote": "Die Demos nutzen synthetische Daten.",
+    "translationNote": "Arbeitsübersetzungen, nicht zertifiziert."
+  },
+  "errors": {
+    "notFoundTitle": "Seite nicht gefunden",
+    "notFoundText": "Die angeforderte Seite existiert nicht oder wurde verschoben.",
+    "backHome": "Zur Startseite",
+    "errorTitle": "Ein Fehler ist aufgetreten",
+    "errorText": "Der Inhalt konnte nicht angezeigt werden. Sie können es erneut versuchen.",
+    "retry": "Erneut versuchen"
+  }
+}

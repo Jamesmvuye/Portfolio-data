@@ -1,0 +1,395 @@
+{
+  "meta": {
+    "siteName": "James Mvuye · LEARNMORE-DATA",
+    "home": {
+      "title": "James Mvuye — Data Analyst, instructor and research consultant",
+      "description": "Portfolio of James Mvuye (LEARNMORE-DATA): data analysis, dashboards, statistics, health and epidemiology, QGIS mapping and data & AI training."
+    },
+    "projects": {
+      "title": "Data analysis projects",
+      "description": "Project catalogue: health and epidemiology, business intelligence, statistics, QGIS mapping. Methods, dashboards and related files."
+    },
+    "dashboards": {
+      "title": "Interactive dashboards",
+      "description": "Dashboard gallery (Power BI, Python, R, Excel) with indicators, filters and sources. Demo data clearly identified."
+    },
+    "about": {
+      "title": "About James Mvuye",
+      "description": "Profile, positioning, skills and tools of James Mvuye, Data Analyst, Data Instructor and research consultant."
+    },
+    "services": {
+      "title": "Data and research services",
+      "description": "Data analysis, dashboards, statistics, research support, health, QGIS mapping and data & AI training."
+    },
+    "contact": {
+      "title": "Contact and collaboration",
+      "description": "Request a service, a quote or propose a collaboration to James Mvuye (LEARNMORE-DATA)."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "dashboards": "Dashboards",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact",
+    "skip": "Skip to main content",
+    "main": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "theme": "Toggle theme",
+    "themeLight": "Light theme",
+    "themeDark": "Dark theme"
+  },
+  "common": {
+    "download": "Download",
+    "view": "View",
+    "hide": "Hide",
+    "seeAll": "See all",
+    "viewProject": "View project",
+    "backToProjects": "Back to projects",
+    "tools": "Tools",
+    "domain": "Domain",
+    "date": "Date",
+    "synthetic": "Synthetic data",
+    "comingSoon": "Coming soon",
+    "notConfigured": "Not configured",
+    "loading": "Loading…",
+    "size": "Size",
+    "externalLink": "opens in a new tab",
+    "missing": "n/a"
+  },
+  "domains": {
+    "health": "Health and epidemiology",
+    "business": "Business Intelligence",
+    "stats": "Statistics and research",
+    "gis": "Mapping and QGIS",
+    "other": "Other analyses"
+  },
+  "hero": {
+    "eyebrow": "LEARNMORE-DATA",
+    "role": "Data Analyst | Data Instructor | Research Consultant",
+    "intro": "I help companies, researchers and organisations turn their data into decisions through data analysis, visualisation and artificial intelligence.",
+    "ctaProjects": "Explore my projects",
+    "ctaContact": "Contact me",
+    "photoAlt": "Professional portrait of James Mvuye",
+    "placeholderTitle": "Photo coming soon",
+    "placeholderHint": "Add public/images/james-mvuye.jpg",
+    "audience": "For companies, NGOs, researchers and organisations"
+  },
+  "home": {
+    "featuredTitle": "Selected projects",
+    "featuredLead": "Case studies showing the approach: question, data, method, result and limits.",
+    "syntheticNote": "Projects in this showcase use synthetic data, flagged on every page: they illustrate methods, not real results.",
+    "skillsTitle": "Skills and tools",
+    "skillsLead": "Tools mastered to answer a precise question, not a wall of logos.",
+    "vizTitle": "Visualisation preview",
+    "vizLead": "An interactive excerpt of the demo sales dashboard (fictitious data).",
+    "vizCta": "Explore all dashboards",
+    "servicesTitle": "Services",
+    "servicesLead": "From one-off analysis to full support for a research or reporting project.",
+    "aboutTitle": "About",
+    "aboutText": "As a Data Analyst, Data Instructor and research consultant, I support organisations that want rigorous, reproducible analyses that decision-makers can understand.",
+    "aboutCta": "Read my profile",
+    "ctaTitle": "A data project to start?",
+    "ctaText": "Let's talk about your questions, your data and the deliverable you need.",
+    "ctaButton": "Propose a collaboration"
+  },
+  "skills": {
+    "analysis": { "title": "Data analysis and processing", "text": "Reproducible cleaning, transformation, quality control and exploratory analysis." },
+    "viz": { "title": "Visualisation and reporting", "text": "Readable dashboards and reports with defined, sourced indicators." },
+    "stats": { "title": "Statistics and research", "text": "Test selection, effect sizes, confidence intervals and documented methods." },
+    "gis": { "title": "Mapping and spatial analysis", "text": "Professional maps and spatial analyses with QGIS." },
+    "ai": { "title": "AI applied to data", "text": "Sensible use of AI to speed up analysis, with human verification of results." }
+  },
+  "projectsPage": {
+    "title": "Projects",
+    "lead": "Each project describes the question, the data, the method, the results and their limits.",
+    "search": "Search a project, a tool…",
+    "searchLabel": "Search",
+    "filterDomain": "Domain",
+    "filterTool": "Tool",
+    "all": "All",
+    "allTools": "All tools",
+    "count": "{count, plural, =0 {No projects} one {# project} other {# projects}}",
+    "reset": "Reset filters",
+    "noResults": "No project matches your search.",
+    "readMore": "See details",
+    "translationPartial": "Partial translation"
+  },
+  "project": {
+    "syntheticBanner": "Demonstration project: all data are synthetic (fictitious). Figures illustrate the method and describe no real situation.",
+    "fallbackNotice": "This project is not yet available in {requested}. The content is shown in {shown}.",
+    "summary": "Summary",
+    "context": "Context",
+    "problem": "Problem statement",
+    "objectives": "Objectives",
+    "data": "Data",
+    "dataSources": "Sources",
+    "variables": "Variable dictionary",
+    "varName": "Variable",
+    "varType": "Type",
+    "varDesc": "Description",
+    "cleaning": "Cleaning and preparation",
+    "methodology": "Analysis methodology",
+    "tools": "Tools and technologies",
+    "dashboard": "Dashboard and visualisations",
+    "dashboardText": "Interactive demonstration built on the project's synthetic data.",
+    "openDashboard": "Open the dashboard",
+    "results": "Results",
+    "recommendations": "Interpretation and recommendations",
+    "limitations": "Limitations of the analysis",
+    "files": "Files and source code",
+    "filesLead": "Only publishable files are offered. The data are fictitious and free to use for practice.",
+    "github": "Source code on GitHub",
+    "githubSoon": "GitHub repository coming soon",
+    "related": "Similar projects",
+    "sourceSynthetic": "Synthetic dataset generated by script (fixed seed), unrelated to any real people, companies or places.",
+    "projectDate": "Project date",
+    "languages": "Available languages",
+    "preview": "Preview",
+    "fileMissing": "File unavailable",
+    "fileKind": {
+      "csv": "CSV data",
+      "xlsx": "Excel workbook",
+      "xls": "Excel workbook",
+      "pdf": "PDF document",
+      "py": "Python script",
+      "r": "R script",
+      "sql": "SQL queries",
+      "doc": "Documentation"
+    }
+  },
+  "dashboards": {
+    "title": "Dashboards",
+    "lead": "Demo gallery: Power BI, Python, R and Excel. Each dashboard states its objectives, indicators and sources.",
+    "syntheticBanner": "Demos built with synthetic (fictitious) data only, to illustrate features.",
+    "toolPowerbi": "Power BI",
+    "toolPython": "Python",
+    "toolR": "R",
+    "toolExcel": "Excel",
+    "objectives": "Objectives",
+    "indicators": "Key indicators",
+    "source": "Data source",
+    "sourceValue": "Synthetic data generated by script (see the related project).",
+    "openDemo": "Open the demo",
+    "backToGallery": "Back to gallery",
+    "relatedProject": "Related project",
+    "official": "Official version",
+    "powerbiMissing": "The official Power BI report is not published yet. It is embedded via the authorised embed URL (see README). The demo above reproduces its indicators with fictitious data.",
+    "externalMissing": "The hosted application (Streamlit, Shiny…) is not online yet. The demo above reproduces its indicators with fictitious data.",
+    "openExternal": "Open the hosted application",
+    "downloadXlsx": "Download the Excel workbook",
+    "loadingChart": "Loading chart…",
+    "items": {
+      "sales": {
+        "title": "Multi-region sales performance",
+        "summary": "Revenue, margin and growth by region and category.",
+        "objectives": "Track sales performance and spot the regions and categories that create value.",
+        "indicators": ["Revenue", "Margin and margin rate", "Orders and average order value", "12-month growth"]
+      },
+      "epi": {
+        "title": "Weekly epidemiological surveillance",
+        "summary": "Incidence by zone, moving average, alert threshold and completeness.",
+        "objectives": "Quickly detect abnormal incidence rises and monitor report quality.",
+        "indicators": ["Reported cases", "Incidence per 10,000 inhabitants", "Alert weeks", "Unreported weeks"]
+      },
+      "trial": {
+        "title": "Two-group comparison",
+        "summary": "Score change by group, mean difference and confidence interval.",
+        "objectives": "Compare the change in a score between control and intervention groups, with its uncertainty.",
+        "indicators": ["Sample sizes and loss to follow-up", "Mean change by group", "Difference and 95% CI", "Baseline / follow-up relationship"]
+      },
+      "budget": {
+        "title": "Programme budget tracking",
+        "summary": "Planned, actual, variance and execution rate by budget line.",
+        "objectives": "Visualise budget execution and spot lines drifting from plan.",
+        "indicators": ["Planned budget", "Actual to date", "Execution rate", "Variance by line"]
+      }
+    },
+    "ui": {
+      "filters": "Filters",
+      "all": "All",
+      "year": "Year",
+      "region": "Region",
+      "category": "Category",
+      "zone": "Zone",
+      "group": "Group",
+      "line": "Budget line",
+      "definitions": "Indicator definitions",
+      "noData": "No data for this selection.",
+      "missingData": "Missing data",
+      "regions": { "North": "North", "South": "South", "East": "East", "West": "West" },
+      "categories": { "Hardware": "Hardware", "Software": "Software", "Services": "Services", "Training": "Training" },
+      "groups": { "control": "Control", "intervention": "Intervention" },
+      "lines": { "Personnel": "Personnel", "Transport": "Transport", "Equipment": "Equipment", "Training": "Training", "Communication": "Communication", "Other": "Other" },
+      "sales": {
+        "revenue": "Revenue",
+        "margin": "Margin",
+        "marginRate": "Margin rate",
+        "orders": "Orders",
+        "aov": "Average order value",
+        "monthlyTitle": "Monthly revenue",
+        "categoryTitle": "Revenue by category",
+        "regionTitle": "Margin by region",
+        "defRevenue": "Revenue: sum of sales in US dollars over the selection.",
+        "defMargin": "Margin: revenue minus costs. Margin rate: margin divided by revenue.",
+        "defAov": "Average order value: revenue divided by the number of orders."
+      },
+      "epi": {
+        "cases": "Reported cases",
+        "incidence": "Mean incidence",
+        "alerts": "Alert weeks",
+        "missing": "Unreported weeks",
+        "per10k": "per 10,000 inh.",
+        "trendTitle": "Weekly incidence and alert threshold",
+        "casesTitle": "Reported cases per week",
+        "incidenceSeries": "Incidence",
+        "movingAvg": "4-week moving avg.",
+        "threshold": "Alert threshold",
+        "week": "Week",
+        "defIncidence": "Incidence: cases / population × 10,000. Moving average: mean of the last 4 weeks (minimum 2 observations).",
+        "defThreshold": "Alert threshold: mean + 2 standard deviations of the zone's incidence. Unreported weeks are never counted as zero cases.",
+        "missingNote": "{count, plural, =0 {All weeks are reported for this selection.} one {# unreported week in this selection (shown as a gap).} other {# unreported weeks in this selection (shown as gaps).}}"
+      },
+      "trial": {
+        "n": "Participants",
+        "lost": "Lost to follow-up",
+        "diff": "Difference in change",
+        "ci": "95% CI",
+        "meanChange": "Mean score change",
+        "scatterTitle": "Baseline and follow-up score",
+        "meanTitle": "Mean change by group (± 95% CI)",
+        "baseline": "Baseline score",
+        "followup": "Follow-up score",
+        "points": "points",
+        "defChange": "Change: follow-up score minus baseline score. Complete-case analysis.",
+        "defCi": "95% CI of the difference: Welch approximation (t distribution). Indicative result on synthetic data.",
+        "lostNote": "{count} participant(s) without a follow-up score are excluded from the means."
+      },
+      "budget": {
+        "planned": "Planned budget",
+        "actual": "Actual to date",
+        "rate": "Execution rate",
+        "variance": "Variance",
+        "byLineTitle": "Planned and actual by line (executed months)",
+        "monthlyTitle": "Cumulative monthly planned and actual",
+        "tableTitle": "Excel workbook preview",
+        "month": "Month",
+        "planned_s": "Planned",
+        "actual_s": "Actual",
+        "defRate": "Execution rate: actual / planned over executed months (January to September). Variance: actual − planned.",
+        "defMissing": "October to December have no actuals: they stay empty and do not count as zero."
+      }
+    }
+  },
+  "about": {
+    "title": "About",
+    "lead": "Data Analyst, Data Instructor and research consultant.",
+    "profileTitle": "Profile",
+    "profile": [
+      "My name is James Mvuye and I work under the LEARNMORE-DATA brand. I help companies, researchers and organisations turn their data into decisions through data analysis, visualisation and artificial intelligence.",
+      "I also teach digital mapping and spatial analysis with QGIS, and I support research work that needs a clear, documented statistical approach."
+    ],
+    "approachTitle": "My approach",
+    "approach": [
+      { "title": "Rigour", "text": "A precise question, described data, a justified method." },
+      { "title": "Transparency", "text": "Assumptions, limits and missing data are always made visible." },
+      { "title": "Reproducibility", "text": "Scripts and datasets provided whenever their publication is allowed." },
+      { "title": "Clarity", "text": "Results explained simply to enable decisions." }
+    ],
+    "toolsTitle": "Tools",
+    "toolsLead": "Python, R, SQL, Excel, Power BI, QGIS and Jupyter.",
+    "languagesTitle": "Languages",
+    "educationTitle": "Education",
+    "certificationsTitle": "Certifications",
+    "placeholder": "Section to be completed: only verified items will be published here.",
+    "trainingTitle": "LEARNMORE-DATA QGIS training",
+    "trainingText": "A 12-module path, from an introduction to GIS to spatial analysis, raster analysis, satellite data and using AI with QGIS.",
+    "trainingCta": "Discover the training",
+    "siteLanguagesTitle": "Site in 4 languages",
+    "siteLanguagesText": "This site is available in French, English, Spanish and German. Non-French versions are working translations and are not certified."
+  },
+  "services": {
+    "title": "Services",
+    "lead": "Services tailored to your questions, your data and your schedule. No prices are displayed: each request is discussed and quoted individually.",
+    "items": {
+      "analysis": { "title": "Data analysis and processing", "text": "Cleaning, structuring, quality control and exploratory analysis of your datasets (Excel, Python, R, SQL)." },
+      "dashboards": { "title": "Dashboards and reporting", "text": "Clear dashboards and automated reports (Power BI, Excel, Python) with defined, sourced indicators." },
+      "stats": { "title": "Statistical analysis", "text": "Choice of tests, models, effect sizes and interpretation, with reproducible scripts." },
+      "research": { "title": "Scientific research support", "text": "Support with methodology, analysis and presentation of your research results." },
+      "health": { "title": "Health data and epidemiology", "text": "Surveillance indicators, incidence rates and data quality, with respect for confidentiality." },
+      "gis": { "title": "Mapping and spatial analysis (QGIS)", "text": "Professional maps, proximity and accessibility analyses, geographic data processing." },
+      "training": { "title": "Data and AI training", "text": "Hands-on training in data analysis, QGIS and sensible AI use, for teams and individuals." }
+    },
+    "processTitle": "How we work",
+    "process": [
+      { "title": "Scoping", "text": "Questions, available data, constraints and expected deliverables." },
+      { "title": "Analysis", "text": "Data preparation, documented method, validation checkpoints." },
+      { "title": "Delivery", "text": "Dashboard, report or training, with scripts and documentation." },
+      { "title": "Follow-up", "text": "Questions, adjustments and skills transfer." }
+    ],
+    "ctaService": "Request a service",
+    "ctaQuote": "Request a quote",
+    "ctaCollab": "Propose a collaboration",
+    "trainingLink": "See the QGIS training",
+    "confidentiality": "Sensitive data (health, personal) is handled according to your confidentiality rules; nothing is published without permission."
+  },
+  "contact": {
+    "title": "Contact",
+    "lead": "Describe your need: service, quote or collaboration. I will come back to you with a first answer.",
+    "formTitle": "Send a message",
+    "fields": {
+      "name": "Full name",
+      "email": "Email address",
+      "organization": "Organisation (optional)",
+      "type": "Request type",
+      "service": "Service concerned",
+      "message": "Your message",
+      "consent": "I agree that my information may be used to answer my request."
+    },
+    "types": {
+      "service": "Service request",
+      "quote": "Quote request",
+      "collab": "Collaboration proposal",
+      "other": "Other question"
+    },
+    "anyService": "Not specified",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Thank you, your message has been sent. You will receive a reply by email.",
+    "errors": {
+      "name": "Enter your name (2 characters minimum).",
+      "email": "Enter a valid email address.",
+      "message": "Your message must be at least 20 characters long.",
+      "consent": "You must accept the use of your information.",
+      "type": "Choose a request type.",
+      "tooMany": "Too many attempts. Try again in a few minutes.",
+      "server": "Sending failed. Try again later or use another contact method.",
+      "network": "Unable to connect. Check your network and try again.",
+      "fixFields": "Please correct the highlighted fields."
+    },
+    "notConfigured": "Form sending is not yet enabled on this site. Please use one of the contact links alongside.",
+    "linksTitle": "Other ways to get in touch",
+    "links": { "linkedin": "LinkedIn", "github": "GitHub", "whatsapp": "WhatsApp", "email": "Email" },
+    "linkSoon": "Link coming soon",
+    "privacy": "Submitted data is used only to answer your request and is never published."
+  },
+  "footer": {
+    "tagline": "Turning data into decisions.",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "rights": "All rights reserved.",
+    "syntheticNote": "Demos use synthetic data.",
+    "translationNote": "Working translations, not certified."
+  },
+  "errors": {
+    "notFoundTitle": "Page not found",
+    "notFoundText": "The requested page does not exist or has been moved.",
+    "backHome": "Back to home",
+    "errorTitle": "Something went wrong",
+    "errorText": "The content could not be displayed. You can try again.",
+    "retry": "Try again"
+  }
+}

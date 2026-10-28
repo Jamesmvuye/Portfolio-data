@@ -1,0 +1,112 @@
+# Portfolio de James Mvuye — LEARNMORE-DATA
+
+Portfolio professionnel de Data Analyst / Data Instructor / consultant en recherche : projets documentés, dashboards interactifs, services et contact, en **4 langues** (français par défaut, anglais, espagnol, allemand).
+
+> **Toutes les données de démonstration sont synthétiques** (fictives) et signalées comme telles sur chaque page. Aucun diplôme, certification, client, témoignage, tarif ou résultat réel n'est inventé. Les traductions EN/ES/DE sont des traductions de travail, **non certifiées**.
+
+## Technologies
+
+Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · next-intl 4 (i18n) · Recharts 3 (graphiques) · Zod (validation) · next-themes (mode sombre) · lucide-react.
+Pas de base de données ni d'authentification : le contenu est dans le dépôt (`src/content`, `messages`, `public`).
+
+## Prérequis
+
+Node.js ≥ 20.9 (testé avec 24) et npm.
+
+## Installation et commandes
+
+```bash
+npm install
+npm run dev          # développement : http://localhost:3000 (redirige vers /fr)
+npm run build        # build de production
+npm run start        # sert le build
+npm run lint         # ESLint
+npm run typecheck    # TypeScript
+npm run check        # cohérence du contenu : clés de traduction identiques dans les 4 langues, fichiers de projets présents
+npm run generate:data  # régénère les jeux de données synthétiques (CSV, XLSX, JSON des dashboards)
+```
+
+Copier `.env.example` vers `.env.local` pour les variables d'environnement (jamais committé).
+
+## Structure
+
+```
+messages/{fr,en,es,de}.json     Tous les textes de l'interface (une clé = 4 traductions)
+src/config/site.ts              Identité, liens de contact, photo, profil (langues, formations, certifications)
+src/content/projects/*.ts       Un fichier par projet (métadonnées + textes dans chaque langue)
+src/content/projects/index.ts   Registre central des projets
+src/content/dashboards.ts       Registre des dashboards (démo, Power BI, apps externes, Excel)
+src/content/data/*.json         Données synthétiques des dashboards
+src/app/[locale]/…              Pages : accueil, projects, projects/[slug], dashboards, about, services, contact
+src/app/api/contact/route.ts    Envoi du formulaire (Resend)
+src/components/                 Composants (Hero, ProjectCard, dashboards/…)
+public/projects/<slug>/…        Fichiers téléchargeables de chaque projet (data/, code/)
+public/images/                  Photo professionnelle
+scripts/                        generate-demo-data.mjs, check-content.mjs
+```
+
+Routes : `/fr`, `/en`, `/es`, `/de` puis `/projects`, `/projects/[slug]`, `/dashboards`, `/about`, `/services`, `/contact`. Le sélecteur de langue conserve la page courante.
+
+## Remplacer la photo
+
+Déposer votre photo dans **`public/images/james-mvuye.jpg`** (ou `.jpeg`, `.png`, `.webp`), idéalement un portrait 4:5 d'au moins 800 × 1000 px. Elle apparaît dans le hero (à droite sur ordinateur, sous le texte sur mobile) et sur la page À propos. Tant que le fichier est absent, un emplacement neutre s'affiche (aucun faux portrait).
+
+## Modifier les liens de contact
+
+Dans `src/config/site.ts`, renseigner `links.linkedin`, `links.github`, `links.whatsapp` (numéro international sans `+`, ex. `243…`) et `links.email`. Un lien vide s'affiche comme « Lien à venir » désactivé : aucun faux lien.
+Compléter aussi `profile.languages`, `profile.education`, `profile.certifications` avec des éléments **vérifiés** (la page À propos affiche sinon un encart « à compléter »).
+
+## Formulaire de contact
+
+La route `POST /api/contact` valide les champs (Zod), rejette les origines étrangères, applique un champ piège anti-spam et une limite de 5 envois / 10 min / IP (en mémoire, au mieux en serverless), puis envoie un e-mail en **texte brut** via [Resend](https://resend.com).
+Variables requises (Vercel → Settings → Environment Variables, ou `.env.local`) :
+
+```
+RESEND_API_KEY=…            # clé API Resend (secret)
+CONTACT_TO_EMAIL=…          # adresse qui reçoit les messages
+CONTACT_FROM_EMAIL=…        # expéditeur vérifié dans Resend
+```
+
+Tant qu'elles ne sont pas toutes définies, le formulaire répond « non configuré » (HTTP 503) et invite à utiliser les autres liens : il ne simule jamais un envoi réussi.
+
+## Ajouter un projet
+
+1. Copier un fichier de `src/content/projects/` (ex. `bi-ventes-multi-regions.ts`) et le renommer avec le **slug** du projet (le nom de fichier doit être égal au slug).
+2. Remplir les métadonnées : `domain` (`health | business | stats | gis | other`), `tools`, `date` (`AAAA-MM`), `synthetic` (`false` seulement pour de vraies données publiables), `dashboardId` (optionnel), `github` (URL du dépôt ; vide = bouton désactivé), `sources`, `related`, `cover` (image optionnelle, sinon un visuel est généré).
+3. Rédiger les textes dans `translations` : `fr`, `en`, `es`, `de`. Si une langue manque, la page s'affiche dans la langue par défaut avec un avis clair, sans erreur (canonical et hreflang adaptés).
+4. Déposer les fichiers dans `public/projects/<slug>/data/` (CSV, XLSX, PDF…) et `public/projects/<slug>/code/` (`.py`, `.R`, `.sql`), puis les déclarer dans `files` (`downloadable: false` pour un fichier consultable seulement). Un fichier absent s'affiche « indisponible », jamais comme un lien actif.
+5. Importer le projet dans `src/content/projects/index.ts` (liste `projects`).
+6. Lancer `npm run check` puis `npm run build`.
+
+⚠ Ne publiez jamais de données personnelles identifiantes, de données médicales confidentielles ou de fichiers dont vous ne détenez pas les droits.
+
+## Gérer les traductions
+
+- Textes d'interface : `messages/<langue>.json`. Toute clé ajoutée doit exister dans les 4 fichiers : `npm run check` le vérifie.
+- Contenu des projets : bloc `translations` de chaque projet.
+- Ajouter une langue : `src/i18n/routing.ts` (`locales`, `localeLabels`), un fichier `messages/<code>.json`, et les traductions des projets.
+
+## Configurer les dashboards externes
+
+Dans `src/content/dashboards.ts` :
+- **Power BI** : publier le rapport puis renseigner `powerBiEmbedUrl` avec l'URL d'intégration autorisée (`https://app.powerbi.com/…`, ex. « Publier sur le web » ou intégration organisationnelle). Seuls les hôtes `app.powerbi.com`, `*.streamlit.app`, `*.shinyapps.io` et `*.hf.space` sont acceptés (cf. `frame-src` dans `next.config.ts`).
+- **Python / R** : Vercel n'exécute pas d'applications Streamlit ou Shiny. Les héberger ailleurs (Streamlit Community Cloud, shinyapps.io, Hugging Face Spaces) puis renseigner `externalAppUrl`.
+- **Excel** : le classeur est proposé en téléchargement (`downloadPath`).
+Tant qu'une URL est vide, un encart explique que la version officielle n'est pas encore publiée : la démonstration affichée est reproduite avec les données synthétiques du site.
+
+## Déploiement (GitHub + Vercel)
+
+Le dossier est un dépôt Git **indépendant** (initialisé dans ce dossier). Aucun dépôt distant n'est configuré.
+
+1. Créer un dépôt GitHub vide sous le bon compte, puis :
+   ```bash
+   git remote add origin https://github.com/<compte>/<depot>.git
+   git push -u origin main
+   ```
+2. Sur [vercel.com](https://vercel.com) : *Add New → Project*, importer le dépôt (preset Next.js détecté automatiquement).
+3. Définir les variables d'environnement (voir `.env.example`) : `NEXT_PUBLIC_SITE_URL` (URL finale, ex. `https://nom.vercel.app`, utilisée par sitemap, Open Graph et canonical ; à défaut l'URL de production Vercel est utilisée) et les 3 variables du formulaire.
+4. Déployer. L'URL publique sera de la forme `https://<nom-du-projet>.vercel.app` selon la disponibilité du nom.
+
+## Sécurité
+
+En-têtes HTTP (CSP, HSTS, X-Frame-Options, Referrer-Policy, Permissions-Policy, nosniff) dans `next.config.ts` ; aucune clé dans le code (`.env*` ignorés par Git) ; formulaire validé côté serveur ; liens externes en `rel="noopener noreferrer"`. La CSP autorise `'unsafe-inline'` pour les scripts car Next.js injecte des scripts d'hydratation sans nonce.

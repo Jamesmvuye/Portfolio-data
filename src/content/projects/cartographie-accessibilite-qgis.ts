@@ -1,0 +1,205 @@
+import type { Project } from "../types";
+
+const base = "/projects/cartographie-accessibilite-qgis";
+
+export const project: Project = {
+  slug: "cartographie-accessibilite-qgis",
+  domain: "gis",
+  tools: ["QGIS", "Python", "pandas"],
+  date: "2025-11",
+  synthetic: true,
+  featured: true,
+  files: [
+    { id: "facilities", kind: "csv", path: `${base}/data/etablissements_fictifs.csv`, downloadable: true },
+    { id: "villages", kind: "csv", path: `${base}/data/villages_fictifs.csv`, downloadable: true },
+    { id: "code", kind: "py", path: `${base}/code/distance_etablissement_proche.py`, downloadable: true },
+  ],
+  sources: ["synthetic"],
+  related: ["epidemio-surveillance-hebdomadaire", "tableau-bord-excel-budget"],
+  translations: {
+    fr: {
+      title: "Accessibilité aux établissements de santé : analyse spatiale avec QGIS",
+      summary: "Méthode QGIS et script de contrôle pour mesurer la distance de chaque village à l'établissement de santé le plus proche et la population couverte.",
+      context: "Les décideurs veulent savoir quelles populations vivent loin d'un établissement de santé afin de prioriser de nouveaux sites ou des équipes mobiles.",
+      problem: "Quelle part de la population se trouve à moins de 5 km d'un établissement, et quels villages sont les plus isolés ?",
+      objectives: [
+        "Géolocaliser établissements et villages dans un même système de coordonnées.",
+        "Calculer la distance au plus proche établissement pour chaque village.",
+        "Estimer la population couverte dans un rayon donné.",
+        "Produire une carte lisible pour la décision.",
+      ],
+      dataDescription: "Jeu FICTIF : 12 établissements et 60 villages placés au hasard dans un carré arbitraire. Les coordonnées ne correspondent à aucun lieu réel.",
+      variables: [
+        ["facility_id", "texte", "Identifiant de l'établissement fictif."],
+        ["type", "texte", "hospital ou health_center."],
+        ["village_id", "texte", "Identifiant du village fictif."],
+        ["lat / lon", "décimal", "Coordonnées WGS84 (EPSG:4326), fictives."],
+        ["population", "entier", "Population du village (fictive)."],
+      ],
+      cleaning: [
+        "Import des CSV comme couches de points (EPSG:4326) puis reprojection en système métrique pour les distances.",
+        "Contrôle des coordonnées manquantes ou hors zone d'étude.",
+        "Vérification des doublons d'identifiants.",
+      ],
+      methodology: [
+        "QGIS : tampons de 5 km autour des établissements (Processing > Tampon).",
+        "QGIS : « Distance au plus proche » (hub distance / jointure par plus proche voisin) pour chaque village.",
+        "Script Python (formule de Haversine) fourni pour contrôler les résultats de la carte.",
+        "Mise en page de carte avec légende, échelle et mention « données fictives ».",
+      ],
+      results: [
+        "Le script fourni, exécuté sur le jeu fictif, indique que 16 % de la population fictive vit à moins de 5 km à vol d'oiseau d'un établissement.",
+        "Les villages les plus éloignés se trouvent à plus de 20 km de l'établissement le plus proche dans ce jeu.",
+        "Ces valeurs illustrent la méthode ; elles ne décrivent aucune région réelle.",
+      ],
+      recommendations: [
+        "Remplacer la distance à vol d'oiseau par un temps de trajet (réseau routier, relief) pour une vraie étude.",
+        "Prioriser les nouveaux sites par population non couverte plutôt que par simple distance.",
+        "Documenter les couches, projections et sources dans un projet QGIS partagé.",
+      ],
+      limitations: [
+        "Données fictives sans réseau routier : la distance à vol d'oiseau sous-estime les trajets réels.",
+        "Pas de capacité des établissements ni de données de fréquentation.",
+        "La mise en page cartographique n'est pas fournie en fichier téléchargeable dans cette démonstration.",
+      ],
+    },
+    en: {
+      title: "Healthcare facility accessibility: spatial analysis with QGIS",
+      summary: "QGIS method and check script to measure each village's distance to the nearest health facility and the population covered.",
+      context: "Decision-makers want to know which populations live far from a health facility in order to prioritise new sites or mobile teams.",
+      problem: "What share of the population lives within 5 km of a facility, and which villages are the most isolated?",
+      objectives: [
+        "Geolocate facilities and villages in a common coordinate system.",
+        "Compute the distance to the nearest facility for each village.",
+        "Estimate the population covered within a given radius.",
+        "Produce a map that is easy to read for decision-making.",
+      ],
+      dataDescription: "FICTITIOUS dataset: 12 facilities and 60 villages placed randomly in an arbitrary square. Coordinates do not correspond to any real place.",
+      variables: [
+        ["facility_id", "text", "Fictitious facility identifier."],
+        ["type", "text", "hospital or health_center."],
+        ["village_id", "text", "Fictitious village identifier."],
+        ["lat / lon", "decimal", "WGS84 coordinates (EPSG:4326), fictitious."],
+        ["population", "integer", "Village population (fictitious)."],
+      ],
+      cleaning: [
+        "Import CSVs as point layers (EPSG:4326), then reproject to a metric system for distances.",
+        "Check for missing coordinates or points outside the study area.",
+        "Check for duplicate identifiers.",
+      ],
+      methodology: [
+        "QGIS: 5 km buffers around facilities (Processing > Buffer).",
+        "QGIS: nearest-neighbour distance (hub distance / join by nearest) for each village.",
+        "Python script (Haversine formula) provided to cross-check the map results.",
+        "Map layout with legend, scale bar and a “fictitious data” notice.",
+      ],
+      results: [
+        "The provided script, run on the fictitious dataset, indicates that 16% of the fictitious population lives within 5 km (straight line) of a facility.",
+        "The most remote villages are more than 20 km from the nearest facility in this dataset.",
+        "These values illustrate the method; they describe no real region.",
+      ],
+      recommendations: [
+        "Replace straight-line distance with travel time (road network, terrain) for a real study.",
+        "Prioritise new sites by uncovered population rather than distance alone.",
+        "Document layers, projections and sources in a shared QGIS project.",
+      ],
+      limitations: [
+        "Fictitious data without a road network: straight-line distance underestimates real journeys.",
+        "No facility capacity or attendance data.",
+        "The cartographic layout is not provided as a downloadable file in this demonstration.",
+      ],
+    },
+    es: {
+      title: "Accesibilidad a los centros de salud: análisis espacial con QGIS",
+      summary: "Método QGIS y script de control para medir la distancia de cada pueblo al centro de salud más cercano y la población cubierta.",
+      context: "Los responsables de decisiones quieren saber qué poblaciones viven lejos de un centro de salud para priorizar nuevos emplazamientos o equipos móviles.",
+      problem: "¿Qué proporción de la población vive a menos de 5 km de un centro y qué pueblos están más aislados?",
+      objectives: [
+        "Geolocalizar centros y pueblos en un mismo sistema de coordenadas.",
+        "Calcular la distancia al centro más cercano para cada pueblo.",
+        "Estimar la población cubierta en un radio dado.",
+        "Producir un mapa legible para la toma de decisiones.",
+      ],
+      dataDescription: "Conjunto FICTICIO: 12 centros y 60 pueblos colocados al azar en un cuadrado arbitrario. Las coordenadas no corresponden a ningún lugar real.",
+      variables: [
+        ["facility_id", "texto", "Identificador del centro ficticio."],
+        ["type", "texto", "hospital o health_center."],
+        ["village_id", "texto", "Identificador del pueblo ficticio."],
+        ["lat / lon", "decimal", "Coordenadas WGS84 (EPSG:4326), ficticias."],
+        ["population", "entero", "Población del pueblo (ficticia)."],
+      ],
+      cleaning: [
+        "Importación de los CSV como capas de puntos (EPSG:4326) y reproyección a un sistema métrico para las distancias.",
+        "Control de coordenadas faltantes o fuera de la zona de estudio.",
+        "Verificación de identificadores duplicados.",
+      ],
+      methodology: [
+        "QGIS: áreas de influencia de 5 km alrededor de los centros (Procesos > Buffer).",
+        "QGIS: distancia al vecino más cercano (distancia al centro / unión por el más cercano) para cada pueblo.",
+        "Script de Python (fórmula de Haversine) proporcionado para contrastar los resultados del mapa.",
+        "Composición del mapa con leyenda, escala y la mención «datos ficticios».",
+      ],
+      results: [
+        "El script proporcionado, ejecutado sobre el conjunto ficticio, indica que el 16 % de la población ficticia vive a menos de 5 km en línea recta de un centro.",
+        "Los pueblos más alejados están a más de 20 km del centro más cercano en este conjunto.",
+        "Estos valores ilustran el método; no describen ninguna región real.",
+      ],
+      recommendations: [
+        "Sustituir la distancia en línea recta por el tiempo de desplazamiento (red viaria, relieve) en un estudio real.",
+        "Priorizar nuevos emplazamientos por población no cubierta y no solo por distancia.",
+        "Documentar capas, proyecciones y fuentes en un proyecto QGIS compartido.",
+      ],
+      limitations: [
+        "Datos ficticios sin red viaria: la distancia en línea recta subestima los trayectos reales.",
+        "Sin capacidad de los centros ni datos de asistencia.",
+        "La composición cartográfica no se ofrece como archivo descargable en esta demostración.",
+      ],
+    },
+    de: {
+      title: "Erreichbarkeit von Gesundheitseinrichtungen: Raumanalyse mit QGIS",
+      summary: "QGIS-Methode und Kontrollskript, um die Entfernung jedes Dorfes zur nächsten Gesundheitseinrichtung und die abgedeckte Bevölkerung zu messen.",
+      context: "Entscheidungsträger möchten wissen, welche Bevölkerungsgruppen weit von einer Gesundheitseinrichtung entfernt leben, um neue Standorte oder mobile Teams zu priorisieren.",
+      problem: "Welcher Bevölkerungsanteil lebt weniger als 5 km von einer Einrichtung entfernt, und welche Dörfer sind am isoliertesten?",
+      objectives: [
+        "Einrichtungen und Dörfer in einem gemeinsamen Koordinatensystem verorten.",
+        "Die Entfernung zur nächsten Einrichtung für jedes Dorf berechnen.",
+        "Die in einem gegebenen Radius abgedeckte Bevölkerung schätzen.",
+        "Eine für Entscheidungen gut lesbare Karte erstellen.",
+      ],
+      dataDescription: "FIKTIVER Datensatz: 12 Einrichtungen und 60 Dörfer, zufällig in einem beliebigen Quadrat platziert. Die Koordinaten entsprechen keinem realen Ort.",
+      variables: [
+        ["facility_id", "Text", "Kennung der fiktiven Einrichtung."],
+        ["type", "Text", "hospital oder health_center."],
+        ["village_id", "Text", "Kennung des fiktiven Dorfes."],
+        ["lat / lon", "Dezimal", "WGS84-Koordinaten (EPSG:4326), fiktiv."],
+        ["population", "Ganzzahl", "Bevölkerung des Dorfes (fiktiv)."],
+      ],
+      cleaning: [
+        "Import der CSV-Dateien als Punktlayer (EPSG:4326), danach Umprojektion in ein metrisches System für die Entfernungen.",
+        "Prüfung auf fehlende Koordinaten oder Punkte außerhalb des Untersuchungsgebiets.",
+        "Prüfung auf doppelte Kennungen.",
+      ],
+      methodology: [
+        "QGIS: 5-km-Puffer um die Einrichtungen (Verarbeitung > Puffer).",
+        "QGIS: Entfernung zum nächsten Nachbarn (Hub-Distanz / Verknüpfung nach nächstem Objekt) für jedes Dorf.",
+        "Bereitgestelltes Python-Skript (Haversine-Formel) zur Gegenprüfung der Kartenergebnisse.",
+        "Kartenlayout mit Legende, Maßstab und dem Hinweis „fiktive Daten“.",
+      ],
+      results: [
+        "Das bereitgestellte Skript zeigt auf dem fiktiven Datensatz, dass 16 % der fiktiven Bevölkerung weniger als 5 km Luftlinie von einer Einrichtung entfernt lebt.",
+        "Die entlegensten Dörfer liegen in diesem Datensatz mehr als 20 km von der nächsten Einrichtung entfernt.",
+        "Diese Werte veranschaulichen die Methode; sie beschreiben keine reale Region.",
+      ],
+      recommendations: [
+        "In einer realen Studie die Luftlinie durch Fahrzeiten (Straßennetz, Gelände) ersetzen.",
+        "Neue Standorte nach nicht abgedeckter Bevölkerung statt nur nach Entfernung priorisieren.",
+        "Layer, Projektionen und Quellen in einem gemeinsamen QGIS-Projekt dokumentieren.",
+      ],
+      limitations: [
+        "Fiktive Daten ohne Straßennetz: Die Luftlinie unterschätzt reale Wege.",
+        "Keine Kapazitäts- oder Besuchsdaten der Einrichtungen.",
+        "Das Kartenlayout wird in dieser Demonstration nicht als Download bereitgestellt.",
+      ],
+    },
+  },
+};

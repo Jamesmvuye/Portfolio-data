@@ -1,0 +1,205 @@
+import type { Project } from "../types";
+
+const base = "/projects/epidemio-surveillance-hebdomadaire";
+
+export const project: Project = {
+  slug: "epidemio-surveillance-hebdomadaire",
+  domain: "health",
+  tools: ["Python", "pandas", "Jupyter", "Excel"],
+  date: "2026-02",
+  synthetic: true,
+  featured: true,
+  dashboardId: "epi",
+  files: [
+    { id: "data", kind: "csv", path: `${base}/data/surveillance_synthetique.csv`, downloadable: true },
+    { id: "code", kind: "py", path: `${base}/code/incidence_hebdomadaire.py`, downloadable: true },
+  ],
+  sources: ["synthetic"],
+  related: ["cartographie-accessibilite-qgis", "etude-statistique-deux-groupes"],
+  translations: {
+    fr: {
+      title: "Surveillance épidémiologique hebdomadaire par zone de santé",
+      summary: "Suivi de l'incidence hebdomadaire de cas dans cinq zones fictives, avec moyenne mobile et détection automatique des semaines en alerte.",
+      context: "Les équipes de surveillance reçoivent chaque semaine des rapports de cas par zone de santé. Sans tableau de bord, les hausses anormales sont repérées tard et les rapports manquants passent inaperçus.",
+      problem: "Comment détecter rapidement une augmentation anormale de l'incidence tout en tenant compte de populations très différentes et de semaines non rapportées ?",
+      objectives: [
+        "Calculer une incidence comparable entre zones (pour 10 000 habitants).",
+        "Lisser les fluctuations par une moyenne mobile sur 4 semaines.",
+        "Signaler les semaines dépassant un seuil statistique d'alerte.",
+        "Rendre visibles les données manquantes plutôt que de les masquer.",
+      ],
+      dataDescription: "Jeu SYNTHÉTIQUE de 260 lignes : 52 semaines × 5 zones fictives. Une flambée est simulée en Zone C (semaines 30 à 36) pour illustrer la détection. Environ 3 % des semaines sont volontairement non rapportées.",
+      variables: [
+        ["week", "entier", "Numéro de semaine (1 à 52)."],
+        ["zone", "texte", "Zone de santé fictive (A à E)."],
+        ["population", "entier", "Population de la zone."],
+        ["cases", "entier (manquant possible)", "Cas notifiés dans la semaine."],
+        ["tested", "entier (manquant possible)", "Personnes testées dans la semaine."],
+      ],
+      cleaning: [
+        "Les semaines non rapportées restent vides (NaN) : elles ne sont jamais remplacées par zéro.",
+        "Contrôle de cohérence : cas ≤ testés et population strictement positive.",
+        "Tri par zone et par semaine avant le calcul des moyennes mobiles.",
+      ],
+      methodology: [
+        "Incidence = cas / population × 10 000.",
+        "Moyenne mobile sur 4 semaines (minimum 2 observations).",
+        "Seuil d'alerte par zone = moyenne + 2 écarts-types de l'incidence de la zone.",
+        "Taux de positivité = cas / testés.",
+      ],
+      results: [
+        "Sur ce jeu fictif, la flambée simulée en Zone C est bien repérée par le seuil d'alerte autour des semaines 30 à 36.",
+        "7 semaines sur 260 (2,7 %) sont non rapportées ; le tableau de bord les signale explicitement.",
+        "Ces résultats illustrent la méthode ; ils ne décrivent aucune situation sanitaire réelle.",
+      ],
+      recommendations: [
+        "Compléter le seuil par un suivi de la tendance (hausses successives) pour limiter les fausses alertes.",
+        "Suivre le taux de complétude des rapports par zone comme indicateur de qualité.",
+        "Adapter le seuil à la saisonnalité connue de la maladie étudiée.",
+      ],
+      limitations: [
+        "Données synthétiques : aucune conclusion épidémiologique réelle ne peut en être tirée.",
+        "Le seuil moyenne + 2 écarts-types est simple et ne modélise pas la saisonnalité.",
+        "Pas d'ajustement sur l'âge, le sexe ou les délais de notification.",
+      ],
+    },
+    en: {
+      title: "Weekly epidemiological surveillance by health zone",
+      summary: "Weekly case incidence monitoring across five fictitious zones, with moving average and automatic detection of alert weeks.",
+      context: "Surveillance teams receive weekly case reports per health zone. Without a dashboard, abnormal increases are spotted late and missing reports go unnoticed.",
+      problem: "How can an abnormal rise in incidence be detected quickly while accounting for very different population sizes and unreported weeks?",
+      objectives: [
+        "Compute an incidence that is comparable across zones (per 10,000 inhabitants).",
+        "Smooth fluctuations with a 4-week moving average.",
+        "Flag weeks exceeding a statistical alert threshold.",
+        "Make missing data visible instead of hiding it.",
+      ],
+      dataDescription: "SYNTHETIC dataset of 260 rows: 52 weeks × 5 fictitious zones. An outbreak is simulated in Zone C (weeks 30 to 36) to illustrate detection. About 3% of weeks are deliberately unreported.",
+      variables: [
+        ["week", "integer", "Week number (1 to 52)."],
+        ["zone", "text", "Fictitious health zone (A to E)."],
+        ["population", "integer", "Zone population."],
+        ["cases", "integer (may be missing)", "Cases reported during the week."],
+        ["tested", "integer (may be missing)", "People tested during the week."],
+      ],
+      cleaning: [
+        "Unreported weeks stay empty (NaN): they are never replaced by zero.",
+        "Consistency checks: cases ≤ tested and population strictly positive.",
+        "Sorting by zone and week before computing moving averages.",
+      ],
+      methodology: [
+        "Incidence = cases / population × 10,000.",
+        "4-week moving average (minimum 2 observations).",
+        "Alert threshold per zone = mean + 2 standard deviations of the zone's incidence.",
+        "Positivity rate = cases / tested.",
+      ],
+      results: [
+        "On this fictitious dataset, the outbreak simulated in Zone C is correctly picked up by the alert threshold around weeks 30 to 36.",
+        "7 weeks out of 260 (2.7%) are unreported; the dashboard flags them explicitly.",
+        "These results illustrate the method; they describe no real health situation.",
+      ],
+      recommendations: [
+        "Complement the threshold with trend monitoring (successive rises) to limit false alerts.",
+        "Track report completeness per zone as a data-quality indicator.",
+        "Adapt the threshold to the known seasonality of the disease studied.",
+      ],
+      limitations: [
+        "Synthetic data: no real epidemiological conclusion can be drawn.",
+        "The mean + 2 SD threshold is simple and does not model seasonality.",
+        "No adjustment for age, sex or reporting delays.",
+      ],
+    },
+    es: {
+      title: "Vigilancia epidemiológica semanal por zona de salud",
+      summary: "Seguimiento de la incidencia semanal de casos en cinco zonas ficticias, con media móvil y detección automática de semanas en alerta.",
+      context: "Los equipos de vigilancia reciben cada semana informes de casos por zona de salud. Sin un panel de control, los aumentos anómalos se detectan tarde y los informes ausentes pasan desapercibidos.",
+      problem: "¿Cómo detectar rápidamente un aumento anómalo de la incidencia teniendo en cuenta poblaciones muy distintas y semanas sin notificar?",
+      objectives: [
+        "Calcular una incidencia comparable entre zonas (por 10 000 habitantes).",
+        "Suavizar las fluctuaciones con una media móvil de 4 semanas.",
+        "Señalar las semanas que superan un umbral estadístico de alerta.",
+        "Hacer visibles los datos faltantes en lugar de ocultarlos.",
+      ],
+      dataDescription: "Conjunto SINTÉTICO de 260 filas: 52 semanas × 5 zonas ficticias. Se simula un brote en la Zona C (semanas 30 a 36) para ilustrar la detección. Cerca del 3 % de las semanas no se notifican deliberadamente.",
+      variables: [
+        ["week", "entero", "Número de semana (1 a 52)."],
+        ["zone", "texto", "Zona de salud ficticia (A a E)."],
+        ["population", "entero", "Población de la zona."],
+        ["cases", "entero (puede faltar)", "Casos notificados en la semana."],
+        ["tested", "entero (puede faltar)", "Personas analizadas en la semana."],
+      ],
+      cleaning: [
+        "Las semanas sin notificar permanecen vacías (NaN): nunca se sustituyen por cero.",
+        "Control de coherencia: casos ≤ analizados y población estrictamente positiva.",
+        "Ordenación por zona y semana antes de calcular las medias móviles.",
+      ],
+      methodology: [
+        "Incidencia = casos / población × 10 000.",
+        "Media móvil de 4 semanas (mínimo 2 observaciones).",
+        "Umbral de alerta por zona = media + 2 desviaciones típicas de la incidencia de la zona.",
+        "Tasa de positividad = casos / analizados.",
+      ],
+      results: [
+        "En este conjunto ficticio, el brote simulado en la Zona C es detectado por el umbral de alerta hacia las semanas 30 a 36.",
+        "7 semanas de 260 (2,7 %) no se notificaron; el panel las señala explícitamente.",
+        "Estos resultados ilustran el método; no describen ninguna situación sanitaria real.",
+      ],
+      recommendations: [
+        "Completar el umbral con el seguimiento de la tendencia (aumentos sucesivos) para limitar las falsas alertas.",
+        "Seguir la exhaustividad de los informes por zona como indicador de calidad.",
+        "Adaptar el umbral a la estacionalidad conocida de la enfermedad estudiada.",
+      ],
+      limitations: [
+        "Datos sintéticos: no se puede extraer ninguna conclusión epidemiológica real.",
+        "El umbral media + 2 DT es simple y no modela la estacionalidad.",
+        "Sin ajuste por edad, sexo ni retrasos de notificación.",
+      ],
+    },
+    de: {
+      title: "Wöchentliche epidemiologische Überwachung nach Gesundheitszone",
+      summary: "Überwachung der wöchentlichen Fallinzidenz in fünf fiktiven Zonen, mit gleitendem Mittel und automatischer Erkennung von Alarmwochen.",
+      context: "Überwachungsteams erhalten wöchentlich Fallberichte je Gesundheitszone. Ohne Dashboard werden ungewöhnliche Anstiege spät erkannt und fehlende Meldungen bleiben unbemerkt.",
+      problem: "Wie lässt sich ein ungewöhnlicher Inzidenzanstieg schnell erkennen, obwohl die Bevölkerungsgrößen sehr unterschiedlich sind und Wochen ohne Meldung vorkommen?",
+      objectives: [
+        "Eine zwischen den Zonen vergleichbare Inzidenz berechnen (pro 10.000 Einwohner).",
+        "Schwankungen mit einem gleitenden 4-Wochen-Mittel glätten.",
+        "Wochen markieren, die eine statistische Alarmschwelle überschreiten.",
+        "Fehlende Daten sichtbar machen, statt sie zu verbergen.",
+      ],
+      dataDescription: "SYNTHETISCHER Datensatz mit 260 Zeilen: 52 Wochen × 5 fiktive Zonen. In Zone C (Wochen 30 bis 36) wird ein Ausbruch simuliert, um die Erkennung zu veranschaulichen. Etwa 3 % der Wochen sind absichtlich nicht gemeldet.",
+      variables: [
+        ["week", "Ganzzahl", "Wochennummer (1 bis 52)."],
+        ["zone", "Text", "Fiktive Gesundheitszone (A bis E)."],
+        ["population", "Ganzzahl", "Bevölkerung der Zone."],
+        ["cases", "Ganzzahl (kann fehlen)", "In der Woche gemeldete Fälle."],
+        ["tested", "Ganzzahl (kann fehlen)", "In der Woche getestete Personen."],
+      ],
+      cleaning: [
+        "Nicht gemeldete Wochen bleiben leer (NaN): sie werden nie durch Null ersetzt.",
+        "Konsistenzprüfung: Fälle ≤ Getestete und Bevölkerung strikt positiv.",
+        "Sortierung nach Zone und Woche vor der Berechnung der gleitenden Mittel.",
+      ],
+      methodology: [
+        "Inzidenz = Fälle / Bevölkerung × 10.000.",
+        "Gleitendes 4-Wochen-Mittel (mindestens 2 Beobachtungen).",
+        "Alarmschwelle je Zone = Mittelwert + 2 Standardabweichungen der Inzidenz der Zone.",
+        "Positivenrate = Fälle / Getestete.",
+      ],
+      results: [
+        "In diesem fiktiven Datensatz wird der in Zone C simulierte Ausbruch von der Alarmschwelle um die Wochen 30 bis 36 erkannt.",
+        "7 von 260 Wochen (2,7 %) sind nicht gemeldet; das Dashboard kennzeichnet sie ausdrücklich.",
+        "Diese Ergebnisse veranschaulichen die Methode; sie beschreiben keine reale Gesundheitslage.",
+      ],
+      recommendations: [
+        "Die Schwelle durch eine Trendüberwachung (aufeinanderfolgende Anstiege) ergänzen, um Fehlalarme zu begrenzen.",
+        "Die Vollständigkeit der Meldungen je Zone als Qualitätsindikator verfolgen.",
+        "Die Schwelle an die bekannte Saisonalität der untersuchten Krankheit anpassen.",
+      ],
+      limitations: [
+        "Synthetische Daten: Es lassen sich keine realen epidemiologischen Schlüsse ziehen.",
+        "Die Schwelle Mittelwert + 2 SD ist einfach und modelliert keine Saisonalität.",
+        "Keine Adjustierung nach Alter, Geschlecht oder Meldeverzug.",
+      ],
+    },
+  },
+};

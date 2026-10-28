@@ -6,6 +6,10 @@ import { ArrowRight } from "lucide-react";
 import { routing } from "@/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
 import { dashboards } from "@/content/dashboards";
+import { projects } from "@/content/projects";
+import { toCard } from "@/lib/project-cards";
+import { ProjectCard } from "@/components/ProjectCard";
+import type { Locale } from "@/i18n/routing";
 import { Badge, Notice, PageHeader, Section } from "@/components/ui";
 import { DashboardSection } from "@/components/dashboards/DashboardSection";
 
@@ -21,11 +25,25 @@ export default async function DashboardsPage({ params }: { params: Promise<{ loc
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "dashboards" });
   const tc = await getTranslations({ locale, namespace: "common" });
+  const realWork = projects.filter((p) => !p.synthetic);
 
   return (
     <>
       <PageHeader title={t("title")} lead={t("lead")} />
-      <Section>
+      {realWork.length > 0 && (
+        <Section>
+          <h2 className="font-display text-3xl font-bold tracking-tight">{t("realTitle")}</h2>
+          <p className="mt-3 max-w-2xl text-lg text-muted">{t("realLead")}</p>
+          <ul className="mt-8 grid gap-6 md:grid-cols-2">
+            {realWork.map((p) => (
+              <li key={p.slug}>
+                <ProjectCard project={toCard(p, locale as Locale)} />
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+      <Section tone="alt">
         <Notice role="status">{t("syntheticBanner")}</Notice>
 
         {/* Galerie : aperçu de chaque dashboard, avec ancre vers la démonstration */}

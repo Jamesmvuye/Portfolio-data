@@ -81,7 +81,7 @@
   "home": {
     "featuredTitle": "Ausgewählte Projekte",
     "featuredLead": "Fallstudien, die das Vorgehen zeigen: Fragestellung, Daten, Methode, Ergebnis und Grenzen.",
-    "syntheticNote": "Die Projekte dieser Präsentation nutzen synthetische Daten, auf jeder Seite gekennzeichnet: Sie veranschaulichen Methoden, keine realen Ergebnisse.",
+    "syntheticNote": "Als „Synthetische Daten“ gekennzeichnete Projekte nutzen fiktive Daten, die Methoden veranschaulichen, keine realen Ergebnisse. Die übrigen sind realisierte Arbeiten, die per Screenshot gezeigt werden.",
     "skillsTitle": "Kompetenzen und Werkzeuge",
     "skillsLead": "Beherrschte Werkzeuge im Dienst einer präzisen Fragestellung, keine Logo-Wand.",
     "vizTitle": "Vorschau der Visualisierungen",
@@ -97,11 +97,26 @@
     "ctaButton": "Zusammenarbeit vorschlagen"
   },
   "skills": {
-    "analysis": { "title": "Datenanalyse und -aufbereitung", "text": "Reproduzierbare Bereinigung, Transformation, Qualitätskontrolle und explorative Analyse." },
-    "viz": { "title": "Visualisierung und Reporting", "text": "Lesbare Dashboards und Berichte mit definierten, belegten Kennzahlen." },
-    "stats": { "title": "Statistik und Forschung", "text": "Testwahl, Effektstärken, Konfidenzintervalle und dokumentierte Methoden." },
-    "gis": { "title": "Kartografie und Raumanalyse", "text": "Professionelle Karten und Raumanalysen mit QGIS." },
-    "ai": { "title": "KI für Daten", "text": "Sinnvoller Einsatz von KI zur Beschleunigung der Analyse, mit menschlicher Überprüfung der Ergebnisse." }
+    "analysis": {
+      "title": "Datenanalyse und -aufbereitung",
+      "text": "Reproduzierbare Bereinigung, Transformation, Qualitätskontrolle und explorative Analyse."
+    },
+    "viz": {
+      "title": "Visualisierung und Reporting",
+      "text": "Lesbare Dashboards und Berichte mit definierten, belegten Kennzahlen."
+    },
+    "stats": {
+      "title": "Statistik und Forschung",
+      "text": "Testwahl, Effektstärken, Konfidenzintervalle und dokumentierte Methoden."
+    },
+    "gis": {
+      "title": "Kartografie und Raumanalyse",
+      "text": "Professionelle Karten und Raumanalysen mit QGIS."
+    },
+    "ai": {
+      "title": "KI für Daten",
+      "text": "Sinnvoller Einsatz von KI zur Beschleunigung der Analyse, mit menschlicher Überprüfung der Ergebnisse."
+    }
   },
   "projectsPage": {
     "title": "Projekte",
@@ -158,8 +173,13 @@
       "py": "Python-Skript",
       "r": "R-Skript",
       "sql": "SQL-Abfragen",
-      "doc": "Dokumentation"
-    }
+      "doc": "Dokumentation",
+      "pbix": "Power-BI-Bericht"
+    },
+    "sourceTbd": "Datenquelle noch anzugeben.",
+    "noFiles": "Die Quelldateien dieses Projekts werden nicht veröffentlicht.",
+    "captureCaption": "Screenshot des erstellten Dashboards.",
+    "captureAlt": "Screenshot des Projekts:"
   },
   "dashboards": {
     "title": "Dashboards",
@@ -187,25 +207,45 @@
         "title": "Vertriebsleistung über mehrere Regionen",
         "summary": "Umsatz, Marge und Wachstum nach Region und Kategorie.",
         "objectives": "Die Vertriebsleistung verfolgen und die Regionen und Kategorien erkennen, die Wert schaffen.",
-        "indicators": ["Umsatz", "Marge und Margenquote", "Bestellungen und Bestellwert", "12-Monats-Wachstum"]
+        "indicators": [
+          "Umsatz",
+          "Marge und Margenquote",
+          "Bestellungen und Bestellwert",
+          "12-Monats-Wachstum"
+        ]
       },
       "epi": {
         "title": "Wöchentliche epidemiologische Überwachung",
         "summary": "Inzidenz je Zone, gleitendes Mittel, Alarmschwelle und Vollständigkeit.",
         "objectives": "Ungewöhnliche Inzidenzanstiege schnell erkennen und die Qualität der Meldungen überwachen.",
-        "indicators": ["Gemeldete Fälle", "Inzidenz pro 10.000 Einwohner", "Alarmwochen", "Nicht gemeldete Wochen"]
+        "indicators": [
+          "Gemeldete Fälle",
+          "Inzidenz pro 10.000 Einwohner",
+          "Alarmwochen",
+          "Nicht gemeldete Wochen"
+        ]
       },
       "trial": {
         "title": "Vergleich zweier Gruppen",
         "summary": "Score-Veränderung je Gruppe, Mittelwertdifferenz und Konfidenzintervall.",
         "objectives": "Die Veränderung eines Scores zwischen Kontroll- und Interventionsgruppe samt Unsicherheit vergleichen.",
-        "indicators": ["Gruppengrößen und Verluste", "Mittlere Veränderung je Gruppe", "Differenz und 95-%-KI", "Zusammenhang Ausgangs-/Follow-up-Score"]
+        "indicators": [
+          "Gruppengrößen und Verluste",
+          "Mittlere Veränderung je Gruppe",
+          "Differenz und 95-%-KI",
+          "Zusammenhang Ausgangs-/Follow-up-Score"
+        ]
       },
       "budget": {
         "title": "Budgetverfolgung eines Programms",
         "summary": "Plan, Ist, Abweichung und Ausführungsquote je Budgetposition.",
         "objectives": "Die Budgetausführung visualisieren und Positionen erkennen, die vom Plan abweichen.",
-        "indicators": ["Geplantes Budget", "Ist bis heute", "Ausführungsquote", "Abweichung je Position"]
+        "indicators": [
+          "Geplantes Budget",
+          "Ist bis heute",
+          "Ausführungsquote",
+          "Abweichung je Position"
+        ]
       }
     },
     "ui": {
@@ -220,10 +260,30 @@
       "definitions": "Definitionen der Kennzahlen",
       "noData": "Keine Daten für diese Auswahl.",
       "missingData": "Fehlende Daten",
-      "regions": { "North": "Nord", "South": "Süd", "East": "Ost", "West": "West" },
-      "categories": { "Hardware": "Hardware", "Software": "Software", "Services": "Dienstleistungen", "Training": "Schulung" },
-      "groups": { "control": "Kontrolle", "intervention": "Intervention" },
-      "lines": { "Personnel": "Personal", "Transport": "Transport", "Equipment": "Ausstattung", "Training": "Schulung", "Communication": "Kommunikation", "Other": "Sonstiges" },
+      "regions": {
+        "North": "Nord",
+        "South": "Süd",
+        "East": "Ost",
+        "West": "West"
+      },
+      "categories": {
+        "Hardware": "Hardware",
+        "Software": "Software",
+        "Services": "Dienstleistungen",
+        "Training": "Schulung"
+      },
+      "groups": {
+        "control": "Kontrolle",
+        "intervention": "Intervention"
+      },
+      "lines": {
+        "Personnel": "Personal",
+        "Transport": "Transport",
+        "Equipment": "Ausstattung",
+        "Training": "Schulung",
+        "Communication": "Kommunikation",
+        "Other": "Sonstiges"
+      },
       "sales": {
         "revenue": "Umsatz",
         "margin": "Marge",
@@ -282,7 +342,9 @@
         "defRate": "Ausführungsquote: Ist / Plan über die ausgeführten Monate (Januar bis September). Abweichung: Ist − Plan.",
         "defMissing": "Für Oktober bis Dezember gibt es kein Ist: Sie bleiben leer und zählen nicht als null."
       }
-    }
+    },
+    "realTitle": "Realisierte Dashboards",
+    "realLead": "Power-BI- und Excel-Arbeiten. Dateien sind herunterladbar, sofern ihre Veröffentlichung erlaubt ist."
   },
   "about": {
     "title": "Über mich",
@@ -294,10 +356,22 @@
     ],
     "approachTitle": "Mein Vorgehen",
     "approach": [
-      { "title": "Sorgfalt", "text": "Eine präzise Fragestellung, beschriebene Daten, eine begründete Methode." },
-      { "title": "Transparenz", "text": "Annahmen, Grenzen und fehlende Daten werden stets sichtbar gemacht." },
-      { "title": "Reproduzierbarkeit", "text": "Skripte und Datensätze werden bereitgestellt, sofern ihre Veröffentlichung erlaubt ist." },
-      { "title": "Klarheit", "text": "Ergebnisse werden einfach erklärt, um Entscheidungen zu ermöglichen." }
+      {
+        "title": "Sorgfalt",
+        "text": "Eine präzise Fragestellung, beschriebene Daten, eine begründete Methode."
+      },
+      {
+        "title": "Transparenz",
+        "text": "Annahmen, Grenzen und fehlende Daten werden stets sichtbar gemacht."
+      },
+      {
+        "title": "Reproduzierbarkeit",
+        "text": "Skripte und Datensätze werden bereitgestellt, sofern ihre Veröffentlichung erlaubt ist."
+      },
+      {
+        "title": "Klarheit",
+        "text": "Ergebnisse werden einfach erklärt, um Entscheidungen zu ermöglichen."
+      }
     ],
     "toolsTitle": "Werkzeuge",
     "toolsLead": "Python, R, SQL, Excel, Power BI, QGIS und Jupyter.",
@@ -315,20 +389,53 @@
     "title": "Leistungen",
     "lead": "Leistungen, zugeschnitten auf Ihre Fragen, Ihre Daten und Ihren Zeitplan. Es werden keine Preise angezeigt: Jede Anfrage wird individuell besprochen und angeboten.",
     "items": {
-      "analysis": { "title": "Datenanalyse und -aufbereitung", "text": "Bereinigung, Strukturierung, Qualitätskontrolle und explorative Analyse Ihrer Datensätze (Excel, Python, R, SQL)." },
-      "dashboards": { "title": "Dashboards und Reporting", "text": "Klare Dashboards und automatisierte Berichte (Power BI, Excel, Python) mit definierten, belegten Kennzahlen." },
-      "stats": { "title": "Statistische Analyse", "text": "Auswahl von Tests, Modellen und Effektstärken sowie Interpretation, mit reproduzierbaren Skripten." },
-      "research": { "title": "Begleitung wissenschaftlicher Forschung", "text": "Unterstützung bei Methodik, Analyse und Darstellung der Ergebnisse Ihrer Arbeiten." },
-      "health": { "title": "Gesundheitsdaten und Epidemiologie", "text": "Überwachungskennzahlen, Inzidenzraten und Datenqualität unter Wahrung der Vertraulichkeit." },
-      "gis": { "title": "Kartografie und Raumanalyse (QGIS)", "text": "Professionelle Karten, Nähe- und Erreichbarkeitsanalysen, Verarbeitung von Geodaten." },
-      "training": { "title": "Schulungen in Daten und KI", "text": "Praxisnahe Schulungen in Datenanalyse, QGIS und sinnvollem KI-Einsatz, für Teams und Einzelpersonen." }
+      "analysis": {
+        "title": "Datenanalyse und -aufbereitung",
+        "text": "Bereinigung, Strukturierung, Qualitätskontrolle und explorative Analyse Ihrer Datensätze (Excel, Python, R, SQL)."
+      },
+      "dashboards": {
+        "title": "Dashboards und Reporting",
+        "text": "Klare Dashboards und automatisierte Berichte (Power BI, Excel, Python) mit definierten, belegten Kennzahlen."
+      },
+      "stats": {
+        "title": "Statistische Analyse",
+        "text": "Auswahl von Tests, Modellen und Effektstärken sowie Interpretation, mit reproduzierbaren Skripten."
+      },
+      "research": {
+        "title": "Begleitung wissenschaftlicher Forschung",
+        "text": "Unterstützung bei Methodik, Analyse und Darstellung der Ergebnisse Ihrer Arbeiten."
+      },
+      "health": {
+        "title": "Gesundheitsdaten und Epidemiologie",
+        "text": "Überwachungskennzahlen, Inzidenzraten und Datenqualität unter Wahrung der Vertraulichkeit."
+      },
+      "gis": {
+        "title": "Kartografie und Raumanalyse (QGIS)",
+        "text": "Professionelle Karten, Nähe- und Erreichbarkeitsanalysen, Verarbeitung von Geodaten."
+      },
+      "training": {
+        "title": "Schulungen in Daten und KI",
+        "text": "Praxisnahe Schulungen in Datenanalyse, QGIS und sinnvollem KI-Einsatz, für Teams und Einzelpersonen."
+      }
     },
     "processTitle": "So arbeiten wir",
     "process": [
-      { "title": "Klärung", "text": "Fragen, verfügbare Daten, Rahmenbedingungen und erwartete Ergebnisse." },
-      { "title": "Analyse", "text": "Datenaufbereitung, dokumentierte Methode, Validierungspunkte." },
-      { "title": "Lieferung", "text": "Dashboard, Bericht oder Schulung, mit Skripten und Dokumentation." },
-      { "title": "Nachbetreuung", "text": "Fragen, Anpassungen und Kompetenztransfer." }
+      {
+        "title": "Klärung",
+        "text": "Fragen, verfügbare Daten, Rahmenbedingungen und erwartete Ergebnisse."
+      },
+      {
+        "title": "Analyse",
+        "text": "Datenaufbereitung, dokumentierte Methode, Validierungspunkte."
+      },
+      {
+        "title": "Lieferung",
+        "text": "Dashboard, Bericht oder Schulung, mit Skripten und Dokumentation."
+      },
+      {
+        "title": "Nachbetreuung",
+        "text": "Fragen, Anpassungen und Kompetenztransfer."
+      }
     ],
     "ctaService": "Leistung anfragen",
     "ctaQuote": "Angebot anfragen",
@@ -372,7 +479,12 @@
     },
     "notConfigured": "Das Senden per Formular ist auf dieser Website noch nicht aktiviert. Nutzen Sie bitte einen der Kontaktlinks daneben.",
     "linksTitle": "Weitere Kontaktwege",
-    "links": { "linkedin": "LinkedIn", "github": "GitHub", "whatsapp": "WhatsApp", "email": "E-Mail" },
+    "links": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "whatsapp": "WhatsApp",
+      "email": "E-Mail"
+    },
     "linkSoon": "Link folgt",
     "privacy": "Die eingegebenen Daten dienen ausschließlich der Beantwortung Ihrer Anfrage und werden nicht veröffentlicht."
   },

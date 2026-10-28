@@ -53,8 +53,8 @@ Déposer votre photo dans **`public/images/james-mvuye.jpg`** (ou `.jpeg`, `.png
 
 ## Modifier les liens de contact
 
-Dans `src/config/site.ts`, renseigner `links.linkedin`, `links.github`, `links.whatsapp` (numéro international sans `+`, ex. `243…`) et `links.email`. Un lien vide s'affiche comme « Lien à venir » désactivé : aucun faux lien.
-Compléter aussi `profile.languages`, `profile.education`, `profile.certifications` avec des éléments **vérifiés** (la page À propos affiche sinon un encart « à compléter »).
+Dans `src/config/site.ts` : `links.linkedin`, `links.github`, `links.whatsapp` (numéro international sans `+`) et `links.email` sont renseignés. Un lien vide s'afficherait comme « Lien à venir » désactivé : aucun faux lien.
+`profile.languages` (français, anglais, espagnol, allemand) est renseigné, sans niveau (ajouter `level` si souhaité). Compléter `profile.education` et `profile.certifications` avec des éléments **vérifiés** (la page À propos affiche sinon un encart « à compléter »).
 
 ## Formulaire de contact
 
@@ -63,7 +63,7 @@ Variables requises (Vercel → Settings → Environment Variables, ou `.env.loca
 
 ```
 RESEND_API_KEY=…            # clé API Resend (secret)
-CONTACT_TO_EMAIL=…          # adresse qui reçoit les messages
+CONTACT_TO_EMAIL=…          # adresse qui reçoit les messages (ex. jamesmvuye@gmail.com)
 CONTACT_FROM_EMAIL=…        # expéditeur vérifié dans Resend
 ```
 
@@ -77,6 +77,8 @@ Tant qu'elles ne sont pas toutes définies, le formulaire répond « non configu
 4. Déposer les fichiers dans `public/projects/<slug>/data/` (CSV, XLSX, PDF…) et `public/projects/<slug>/code/` (`.py`, `.R`, `.sql`), puis les déclarer dans `files` (`downloadable: false` pour un fichier consultable seulement). Un fichier absent s'affiche « indisponible », jamais comme un lien actif.
 5. Importer le projet dans `src/content/projects/index.ts` (liste `projects`).
 6. Lancer `npm run check` puis `npm run build`.
+
+**Fichiers Office / Power BI :** déposer le `.xlsx` ou `.pbix` dans `public/projects/<slug>/data/` (noms sans espaces) et déclarer `kind: "xlsx"` ou `"pbix"`. Un `.pbix` contient **toutes** les données chargées : ne le publier que si ces données sont publiables. Les fichiers à ne pas publier vont dans `private-files/` (ignoré par Git, hors de `public/`).
 
 ⚠ Ne publiez jamais de données personnelles identifiantes, de données médicales confidentielles ou de fichiers dont vous ne détenez pas les droits.
 

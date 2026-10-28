@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Code2 } from "lucide-react";
 import { routing, localeLabels, locales, type Locale } from "@/i18n/routing";
@@ -75,7 +76,9 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   const { text, usedLocale, isFallback } = resolveText(project, locale as Locale);
   const dashboard = project.dashboardId ? getDashboard(project.dashboardId) : undefined;
   const related = getRelated(project);
-  const date = new Intl.DateTimeFormat(locale, { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${project.date}-01T00:00:00Z`));
+  const date = project.date
+    ? new Intl.DateTimeFormat(locale, { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${project.date}-01T00:00:00Z`))
+    : null;
   const github = project.github || undefined;
 
   return (
@@ -93,10 +96,12 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
           <h1 className="mt-4 max-w-4xl font-display text-3xl font-extrabold tracking-tight sm:text-5xl">{text.title}</h1>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{text.summary}</p>
           <dl className="mt-6 flex flex-wrap gap-x-10 gap-y-3 text-sm">
-            <div>
-              <dt className="text-muted">{t("projectDate")}</dt>
-              <dd className="font-semibold capitalize">{date}</dd>
-            </div>
+            {date && (
+              <div>
+                <dt className="text-muted">{t("projectDate")}</dt>
+                <dd className="font-semibold capitalize">{date}</dd>
+              </div>
+            )}
             <div>
               <dt className="text-muted">{tc("tools")}</dt>
               <dd className="font-semibold">{project.tools.join(" · ")}</dd>
@@ -121,26 +126,45 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
           </Notice>
         )}
 
-        <div className="overflow-hidden rounded-2xl border border-border">
-          <ProjectCover domain={project.domain} cover={project.cover} priority />
-        </div>
+        {project.images?.length ? (
+          <div className="space-y-4">
+            {project.images.map((img, i) => (
+              <figure key={img.src} className="overflow-hidden rounded-2xl border border-border bg-surface">
+                <Image src={img.src} alt={`${t("captureAlt")} ${text.title}`} width={img.width} height={img.height} priority={i === 0} sizes="(min-width: 1152px) 1100px, 100vw" className="h-auto w-full" />
+                <figcaption className="border-t border-border px-4 py-2 text-xs text-muted">{t("captureCaption")}</figcaption>
+              </figure>
+            ))}
+          </div>
+        ) : (
+          <div className="overflow-hidden rounded-2xl border border-border">
+            <ProjectCover domain={project.domain} cover={project.cover} priority />
+          </div>
+        )}
 
         <div className="grid gap-12 lg:grid-cols-[1fr_20rem]">
           <div className="min-w-0 space-y-12" lang={localeLabels[usedLocale].htmlLang}>
-            <Block id="context" title={t("context")}>
-              <p>{text.context}</p>
-              <h3 className="pt-2 font-display text-lg font-bold">{t("problem")}</h3>
-              <p>{text.problem}</p>
-            </Block>
+            {text.context && (
+              <Block id="context" title={t("context")}>
+                <p>{text.context}</p>
+                {text.problem && (
+                  <>
+                    <h3 className="pt-2 font-display text-lg font-bold">{t("problem")}</h3>
+                    <p>{text.problem}</p>
+                  </>
+                )}
+              </Block>
+            )}
 
-            <Block id="objectives" title={t("objectives")}>
-              <List items={text.objectives} />
-            </Block>
+            {text.objectives.length > 0 && (
+              <Block id="objectives" title={t("objectives")}>
+                <List items={text.objectives} />
+              </Block>
+            )}
 
             <Block id="data" title={t("data")}>
               <p>{text.dataDescription}</p>
               <p className="text-sm text-muted">
-                <strong className="text-fg">{t("dataSources")} :</strong> {project.sources.map((s) => (s === "synthetic" ? t("sourceSynthetic") : s)).join(" ")}
+                <strong className="text-fg">{t("dataSources")} :</strong> {project.sources.map((s) => (s === "synthetic" ? t("sourceSynthetic") : s === "tbd" ? t("sourceTbd") : s)).join(" ")}
               </p>
               {text.variables.length > 0 && (
                 <>
@@ -169,9 +193,11 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
               )}
             </Block>
 
-            <Block id="cleaning" title={t("cleaning")}>
-              <List items={text.cleaning} />
-            </Block>
+            {text.cleaning.length > 0 && (
+              <Block id="cleaning" title={t("cleaning")}>
+                <List items={text.cleaning} />
+              </Block>
+            )}
 
             <Block id="methodology" title={t("methodology")}>
               <List items={text.methodology} />
@@ -201,9 +227,11 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
               <List items={text.results} />
             </Block>
 
-            <Block id="recommendations" title={t("recommendations")}>
-              <List items={text.recommendations} />
-            </Block>
+            {text.recommendations.length > 0 && (
+              <Block id="recommendations" title={t("recommendations")}>
+                <List items={text.recommendations} />
+              </Block>
+            )}
 
             <Block id="limitations" title={t("limitations")}>
               <List items={text.limitations} />
@@ -215,10 +243,12 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
               <h2 id="files-h" className="font-display text-xl font-bold">
                 {t("files")}
               </h2>
-              <p className="mt-2 text-sm text-muted">{t("filesLead")}</p>
-              <div className="mt-4">
-                <FileList files={project.files} locale={locale} />
-              </div>
+              <p className="mt-2 text-sm text-muted">{project.files.length > 0 ? t("filesLead") : t("noFiles")}</p>
+              {project.files.length > 0 && (
+                <div className="mt-4">
+                  <FileList files={project.files} locale={locale} />
+                </div>
+              )}
               <div className="mt-4">
                 {github ? (
                   <ExternalButton href={github} variant="secondary" newTabLabel={tc("externalLink")} className="w-full">

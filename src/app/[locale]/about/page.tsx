@@ -16,6 +16,12 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 const tools = ["Python", "R", "SQL", "Excel", "Power BI", "QGIS", "Jupyter"];
 
+/** Nom de la langue dans la langue du visiteur (ex. « allemand », « German », « Deutsch »). */
+function languageName(code: string, locale: string) {
+  const name = new Intl.DisplayNames([locale], { type: "language" }).of(code) ?? code;
+  return name.charAt(0).toLocaleUpperCase(locale) + name.slice(1);
+}
+
 function Placeholder({ text }: { text: string }) {
   return <p className="rounded-xl border border-dashed border-border bg-surface-2/60 px-4 py-3 text-sm text-muted">{text}</p>;
 }
@@ -78,7 +84,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                     <ul className="space-y-1.5">
                       {languages.map((l) => (
                         <li key={l.code}>
-                          {l.code}
+                          {languageName(l.code, locale)}
                           {l.level && <span className="text-muted"> — {l.level}</span>}
                         </li>
                       ))}
@@ -133,11 +139,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
             <div className="rounded-3xl border border-border bg-brand-soft p-6 sm:p-8">
               <h2 className="font-display text-2xl font-bold text-brand-strong">{t("trainingTitle")}</h2>
               <p className="mt-3 max-w-2xl leading-relaxed text-fg/90">{t("trainingText")}</p>
-              <div className="mt-5">
-                <ExternalButton href={siteConfig.trainingUrl} variant="primary" newTabLabel={tc("externalLink")}>
-                  {t("trainingCta")}
-                </ExternalButton>
-              </div>
+              {siteConfig.trainingUrl && (
+                <div className="mt-5">
+                  <ExternalButton href={siteConfig.trainingUrl} variant="primary" newTabLabel={tc("externalLink")}>
+                    {t("trainingCta")}
+                  </ExternalButton>
+                </div>
+              )}
             </div>
 
             <div>

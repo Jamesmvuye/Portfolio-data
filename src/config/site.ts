@@ -13,14 +13,18 @@ export const siteConfig = {
 
   /** Liens de contact. Format attendu : URL complète, sauf email (adresse) et whatsapp (numéro international sans + ni espaces, ex. "243XXXXXXXXX"). */
   links: {
-    linkedin: "", // ex. "https://www.linkedin.com/in/votre-profil"
-    github: "", // ex. "https://github.com/votre-compte"
-    whatsapp: "", // ex. "243XXXXXXXXX"
-    email: "", // ex. "contact@votre-domaine.com"
+    linkedin: "https://www.linkedin.com/in/jamesmvuye1",
+    github: "https://github.com/Jamesmvuye",
+    whatsapp: "243990519095", // numéro international sans + ni espaces
+    email: "jamesmvuye@gmail.com",
   } as Record<"linkedin" | "github" | "whatsapp" | "email", string>,
 
-  /** Page de vente de la formation QGIS (page existante, vérifiée). */
-  trainingUrl: "https://www.learnmore-data.com/24c1004c",
+  /**
+   * Page de vente de la formation QGIS. Vide = bouton masqué.
+   * L'ancienne adresse (https://www.learnmore-data.com/24c1004c) renvoyait une erreur 404 le 2026-10-28 :
+   * renseigner ici la bonne URL pour réactiver les boutons « Découvrir la formation » / « Voir la formation QGIS ».
+   */
+  trainingUrl: "",
 
   /** Photo professionnelle : déposer le fichier dans public/images/ avec l'un de ces noms. */
   photo: {
@@ -33,7 +37,8 @@ export const siteConfig = {
    * Tant que les listes sont vides, la page À propos affiche un encart « à compléter ».
    */
   profile: {
-    languages: [] as { code: string; level?: string }[],
+    // Codes ISO ; le nom de la langue est affiché dans la langue du visiteur. Niveau (facultatif) : level: "..."
+    languages: [{ code: "fr" }, { code: "en" }, { code: "es" }, { code: "de" }] as { code: string; level?: string }[],
     education: [] as { title: string; org: string; year?: string }[],
     certifications: [] as { title: string; org: string; year?: string; url?: string }[],
   },

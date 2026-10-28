@@ -31,7 +31,7 @@ export async function ProfilePhoto({ locale }: { locale: string }) {
             fill
             priority
             sizes="(min-width: 1024px) 384px, (min-width: 640px) 384px, 90vw"
-            className="object-cover object-top"
+            className="object-cover object-[50%_30%]"
           />
         ) : (
           <div className="flex size-full flex-col items-center justify-center gap-4 bg-gradient-to-b from-brand-soft to-surface-2 p-8 text-center">

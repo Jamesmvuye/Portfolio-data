@@ -81,7 +81,7 @@
   "home": {
     "featuredTitle": "Selected projects",
     "featuredLead": "Case studies showing the approach: question, data, method, result and limits.",
-    "syntheticNote": "Projects in this showcase use synthetic data, flagged on every page: they illustrate methods, not real results.",
+    "syntheticNote": "Projects marked “Synthetic data” use fictitious data that illustrate methods, not real results. The others are completed work shown through screenshots.",
     "skillsTitle": "Skills and tools",
     "skillsLead": "Tools mastered to answer a precise question, not a wall of logos.",
     "vizTitle": "Visualisation preview",
@@ -97,11 +97,26 @@
     "ctaButton": "Propose a collaboration"
   },
   "skills": {
-    "analysis": { "title": "Data analysis and processing", "text": "Reproducible cleaning, transformation, quality control and exploratory analysis." },
-    "viz": { "title": "Visualisation and reporting", "text": "Readable dashboards and reports with defined, sourced indicators." },
-    "stats": { "title": "Statistics and research", "text": "Test selection, effect sizes, confidence intervals and documented methods." },
-    "gis": { "title": "Mapping and spatial analysis", "text": "Professional maps and spatial analyses with QGIS." },
-    "ai": { "title": "AI applied to data", "text": "Sensible use of AI to speed up analysis, with human verification of results." }
+    "analysis": {
+      "title": "Data analysis and processing",
+      "text": "Reproducible cleaning, transformation, quality control and exploratory analysis."
+    },
+    "viz": {
+      "title": "Visualisation and reporting",
+      "text": "Readable dashboards and reports with defined, sourced indicators."
+    },
+    "stats": {
+      "title": "Statistics and research",
+      "text": "Test selection, effect sizes, confidence intervals and documented methods."
+    },
+    "gis": {
+      "title": "Mapping and spatial analysis",
+      "text": "Professional maps and spatial analyses with QGIS."
+    },
+    "ai": {
+      "title": "AI applied to data",
+      "text": "Sensible use of AI to speed up analysis, with human verification of results."
+    }
   },
   "projectsPage": {
     "title": "Projects",
@@ -158,8 +173,13 @@
       "py": "Python script",
       "r": "R script",
       "sql": "SQL queries",
-      "doc": "Documentation"
-    }
+      "doc": "Documentation",
+      "pbix": "Power BI report"
+    },
+    "sourceTbd": "Data source to be specified.",
+    "noFiles": "The source files of this project are not published.",
+    "captureCaption": "Screenshot of the dashboard I built.",
+    "captureAlt": "Screenshot of the project:"
   },
   "dashboards": {
     "title": "Dashboards",
@@ -187,25 +207,45 @@
         "title": "Multi-region sales performance",
         "summary": "Revenue, margin and growth by region and category.",
         "objectives": "Track sales performance and spot the regions and categories that create value.",
-        "indicators": ["Revenue", "Margin and margin rate", "Orders and average order value", "12-month growth"]
+        "indicators": [
+          "Revenue",
+          "Margin and margin rate",
+          "Orders and average order value",
+          "12-month growth"
+        ]
       },
       "epi": {
         "title": "Weekly epidemiological surveillance",
         "summary": "Incidence by zone, moving average, alert threshold and completeness.",
         "objectives": "Quickly detect abnormal incidence rises and monitor report quality.",
-        "indicators": ["Reported cases", "Incidence per 10,000 inhabitants", "Alert weeks", "Unreported weeks"]
+        "indicators": [
+          "Reported cases",
+          "Incidence per 10,000 inhabitants",
+          "Alert weeks",
+          "Unreported weeks"
+        ]
       },
       "trial": {
         "title": "Two-group comparison",
         "summary": "Score change by group, mean difference and confidence interval.",
         "objectives": "Compare the change in a score between control and intervention groups, with its uncertainty.",
-        "indicators": ["Sample sizes and loss to follow-up", "Mean change by group", "Difference and 95% CI", "Baseline / follow-up relationship"]
+        "indicators": [
+          "Sample sizes and loss to follow-up",
+          "Mean change by group",
+          "Difference and 95% CI",
+          "Baseline / follow-up relationship"
+        ]
       },
       "budget": {
         "title": "Programme budget tracking",
         "summary": "Planned, actual, variance and execution rate by budget line.",
         "objectives": "Visualise budget execution and spot lines drifting from plan.",
-        "indicators": ["Planned budget", "Actual to date", "Execution rate", "Variance by line"]
+        "indicators": [
+          "Planned budget",
+          "Actual to date",
+          "Execution rate",
+          "Variance by line"
+        ]
       }
     },
     "ui": {
@@ -220,10 +260,30 @@
       "definitions": "Indicator definitions",
       "noData": "No data for this selection.",
       "missingData": "Missing data",
-      "regions": { "North": "North", "South": "South", "East": "East", "West": "West" },
-      "categories": { "Hardware": "Hardware", "Software": "Software", "Services": "Services", "Training": "Training" },
-      "groups": { "control": "Control", "intervention": "Intervention" },
-      "lines": { "Personnel": "Personnel", "Transport": "Transport", "Equipment": "Equipment", "Training": "Training", "Communication": "Communication", "Other": "Other" },
+      "regions": {
+        "North": "North",
+        "South": "South",
+        "East": "East",
+        "West": "West"
+      },
+      "categories": {
+        "Hardware": "Hardware",
+        "Software": "Software",
+        "Services": "Services",
+        "Training": "Training"
+      },
+      "groups": {
+        "control": "Control",
+        "intervention": "Intervention"
+      },
+      "lines": {
+        "Personnel": "Personnel",
+        "Transport": "Transport",
+        "Equipment": "Equipment",
+        "Training": "Training",
+        "Communication": "Communication",
+        "Other": "Other"
+      },
       "sales": {
         "revenue": "Revenue",
         "margin": "Margin",
@@ -282,7 +342,9 @@
         "defRate": "Execution rate: actual / planned over executed months (January to September). Variance: actual − planned.",
         "defMissing": "October to December have no actuals: they stay empty and do not count as zero."
       }
-    }
+    },
+    "realTitle": "Dashboards I built",
+    "realLead": "Power BI and Excel work. Files can be downloaded where publication is allowed."
   },
   "about": {
     "title": "About",
@@ -294,10 +356,22 @@
     ],
     "approachTitle": "My approach",
     "approach": [
-      { "title": "Rigour", "text": "A precise question, described data, a justified method." },
-      { "title": "Transparency", "text": "Assumptions, limits and missing data are always made visible." },
-      { "title": "Reproducibility", "text": "Scripts and datasets provided whenever their publication is allowed." },
-      { "title": "Clarity", "text": "Results explained simply to enable decisions." }
+      {
+        "title": "Rigour",
+        "text": "A precise question, described data, a justified method."
+      },
+      {
+        "title": "Transparency",
+        "text": "Assumptions, limits and missing data are always made visible."
+      },
+      {
+        "title": "Reproducibility",
+        "text": "Scripts and datasets provided whenever their publication is allowed."
+      },
+      {
+        "title": "Clarity",
+        "text": "Results explained simply to enable decisions."
+      }
     ],
     "toolsTitle": "Tools",
     "toolsLead": "Python, R, SQL, Excel, Power BI, QGIS and Jupyter.",
@@ -315,20 +389,53 @@
     "title": "Services",
     "lead": "Services tailored to your questions, your data and your schedule. No prices are displayed: each request is discussed and quoted individually.",
     "items": {
-      "analysis": { "title": "Data analysis and processing", "text": "Cleaning, structuring, quality control and exploratory analysis of your datasets (Excel, Python, R, SQL)." },
-      "dashboards": { "title": "Dashboards and reporting", "text": "Clear dashboards and automated reports (Power BI, Excel, Python) with defined, sourced indicators." },
-      "stats": { "title": "Statistical analysis", "text": "Choice of tests, models, effect sizes and interpretation, with reproducible scripts." },
-      "research": { "title": "Scientific research support", "text": "Support with methodology, analysis and presentation of your research results." },
-      "health": { "title": "Health data and epidemiology", "text": "Surveillance indicators, incidence rates and data quality, with respect for confidentiality." },
-      "gis": { "title": "Mapping and spatial analysis (QGIS)", "text": "Professional maps, proximity and accessibility analyses, geographic data processing." },
-      "training": { "title": "Data and AI training", "text": "Hands-on training in data analysis, QGIS and sensible AI use, for teams and individuals." }
+      "analysis": {
+        "title": "Data analysis and processing",
+        "text": "Cleaning, structuring, quality control and exploratory analysis of your datasets (Excel, Python, R, SQL)."
+      },
+      "dashboards": {
+        "title": "Dashboards and reporting",
+        "text": "Clear dashboards and automated reports (Power BI, Excel, Python) with defined, sourced indicators."
+      },
+      "stats": {
+        "title": "Statistical analysis",
+        "text": "Choice of tests, models, effect sizes and interpretation, with reproducible scripts."
+      },
+      "research": {
+        "title": "Scientific research support",
+        "text": "Support with methodology, analysis and presentation of your research results."
+      },
+      "health": {
+        "title": "Health data and epidemiology",
+        "text": "Surveillance indicators, incidence rates and data quality, with respect for confidentiality."
+      },
+      "gis": {
+        "title": "Mapping and spatial analysis (QGIS)",
+        "text": "Professional maps, proximity and accessibility analyses, geographic data processing."
+      },
+      "training": {
+        "title": "Data and AI training",
+        "text": "Hands-on training in data analysis, QGIS and sensible AI use, for teams and individuals."
+      }
     },
     "processTitle": "How we work",
     "process": [
-      { "title": "Scoping", "text": "Questions, available data, constraints and expected deliverables." },
-      { "title": "Analysis", "text": "Data preparation, documented method, validation checkpoints." },
-      { "title": "Delivery", "text": "Dashboard, report or training, with scripts and documentation." },
-      { "title": "Follow-up", "text": "Questions, adjustments and skills transfer." }
+      {
+        "title": "Scoping",
+        "text": "Questions, available data, constraints and expected deliverables."
+      },
+      {
+        "title": "Analysis",
+        "text": "Data preparation, documented method, validation checkpoints."
+      },
+      {
+        "title": "Delivery",
+        "text": "Dashboard, report or training, with scripts and documentation."
+      },
+      {
+        "title": "Follow-up",
+        "text": "Questions, adjustments and skills transfer."
+      }
     ],
     "ctaService": "Request a service",
     "ctaQuote": "Request a quote",
@@ -372,7 +479,12 @@
     },
     "notConfigured": "Form sending is not yet enabled on this site. Please use one of the contact links alongside.",
     "linksTitle": "Other ways to get in touch",
-    "links": { "linkedin": "LinkedIn", "github": "GitHub", "whatsapp": "WhatsApp", "email": "Email" },
+    "links": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "whatsapp": "WhatsApp",
+      "email": "Email"
+    },
     "linkSoon": "Link coming soon",
     "privacy": "Submitted data is used only to answer your request and is never published."
   },

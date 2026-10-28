@@ -45,7 +45,7 @@ const dir = join(root, "src", "content", "projects");
 for (const f of readdirSync(dir).filter((f) => f.endsWith(".ts") && f !== "index.ts")) {
   const src = readFileSync(join(dir, f), "utf8");
   const slug = /slug:\s*"([^"]+)"/.exec(src)?.[1];
-  for (const l of locales) if (!new RegExp(`\\n    ${l}: \\{`).test(src)) fail(`${f} : traduction ${l} absente`);
+  for (const l of locales) if (!new RegExp(`\\n\\s+"?${l}"?: \\{`).test(src)) fail(`${f} : traduction ${l} absente`);
   const base = /const base = "([^"]+)"/.exec(src)?.[1];
   for (const m of src.matchAll(/path: `\$\{base\}([^`]+)`/g)) {
     const p = join(root, "public", base, m[1]);

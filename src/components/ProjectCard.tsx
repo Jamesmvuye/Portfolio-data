@@ -11,7 +11,7 @@ export interface ProjectCardData {
   tools: string[];
   title: string;
   summary: string;
-  date: string;
+  date?: string;
   synthetic: boolean;
   cover?: string;
   /** Langue demandée absente : le texte affiché est un repli. */

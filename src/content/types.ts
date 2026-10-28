@@ -4,7 +4,7 @@ export type Domain = "health" | "business" | "stats" | "gis" | "other";
 export const domains: Domain[] = ["health", "business", "stats", "gis", "other"];
 
 export type DashboardTool = "powerbi" | "python" | "r" | "excel";
-export type FileKind = "csv" | "xlsx" | "xls" | "pdf" | "py" | "r" | "sql" | "doc";
+export type FileKind = "csv" | "xlsx" | "xls" | "pdf" | "py" | "r" | "sql" | "pbix" | "doc";
 
 export type Localized<T = string> = Record<Locale, T>;
 
@@ -38,10 +38,12 @@ export interface Project {
   slug: string;
   domain: Domain;
   tools: string[];
-  /** YYYY-MM */
-  date: string;
+  /** AAAA-MM. Facultatif : si absent, aucune date n'est affichée. */
+  date?: string;
   /** Image de couverture (chemin public). Si absent : visuel généré selon le domaine. */
   cover?: string;
+  /** Captures d'écran du travail réalisé (affichées en entier sur la page du projet). */
+  images?: { src: string; width: number; height: number }[];
   /** true = données fictives de démonstration (bandeau d'avertissement affiché). */
   synthetic: boolean;
   featured?: boolean;
@@ -50,7 +52,7 @@ export interface Project {
   files: ProjectFile[];
   /** URL du dépôt GitHub. Si absent : bouton désactivé (pas de faux lien). */
   github?: string;
-  /** Sources des données (texte libre, traduit via sourceKey dans messages). */
+  /** Sources des données : "synthetic" (jeu fictif), "tbd" (à préciser), ou texte libre. */
   sources: string[];
   related?: string[];
   /** Traductions disponibles. Une langue manquante déclenche le repli vers `defaultLocale`. */

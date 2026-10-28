@@ -7,7 +7,7 @@ import type { Domain } from "@/content/types";
  */
 export function ProjectCover({ domain, cover, priority = false }: { domain: Domain; cover?: string; priority?: boolean }) {
   if (cover) {
-    return <Image src={cover} alt="" width={800} height={450} priority={priority} className="aspect-video w-full object-cover" />;
+    return <Image src={cover} alt="" width={800} height={450} priority={priority} className="aspect-video w-full object-cover object-top" />;
   }
   return (
     <svg viewBox="0 0 320 180" role="presentation" aria-hidden className="aspect-video w-full bg-gradient-to-br from-brand-soft to-surface-2">

@@ -5,13 +5,21 @@ import { project as sales } from "./bi-ventes-multi-regions";
 import { project as trial } from "./etude-statistique-deux-groupes";
 import { project as gis } from "./cartographie-accessibilite-qgis";
 import { project as budget } from "./tableau-bord-excel-budget";
+import { project as ebola } from "./powerbi-surveillance-ebola-rdc";
+import { project as academic } from "./powerbi-resultats-academiques-2024-2025";
+import { project as exSales } from "./dashboard-excel-ventes-interactif";
+import { project as ex2025 } from "./dashboard-excel-vente-2025";
+import { project as kinmarche } from "./powerbi-kinmarche-ventes";
 
 /**
  * REGISTRE CENTRAL DES PROJETS.
  * Pour ajouter un projet : créer un fichier dans ce dossier et l'ajouter à la liste ci-dessous.
  * Voir README.md > « Ajouter un projet ».
  */
-export const projects: Project[] = [epi, sales, trial, gis, budget].sort((a, b) => b.date.localeCompare(a.date));
+// Ordre : travaux réels d'abord, puis démonstrations ; au sein de chaque groupe, du plus récent au plus ancien (sans date en dernier).
+export const projects: Project[] = [ebola, academic, exSales, ex2025, kinmarche, epi, sales, trial, gis, budget].sort(
+  (a, b) => Number(a.synthetic) - Number(b.synthetic) || (b.date ?? "").localeCompare(a.date ?? ""),
+);
 
 export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);

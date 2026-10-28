@@ -29,3 +29,14 @@ coverage/
 .DS_Store
 Thumbs.db
 .idea/
+
+# Originaux volumineux déposés dans public/images (photo et captures) : conservés en local, non versionnés.
+# Les versions optimisées sont dans public/images/james-mvuye.jpg et public/projects/*/images/.
+public/images/IMG_*
+public/images/Capture*
+
+# Fichiers Office déposés en vrac (copies rangées dans public/projects/<slug>/data/), verrous Excel, fichiers à ne pas publier
+/public/projects/*.xlsx
+/public/projects/*.pbix
+~$*
+/private-files/

@@ -49,7 +49,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
                   <ButtonLink href={`/contact?type=quote&service=${key}`} variant="secondary">
                     {t("ctaQuote")}
                   </ButtonLink>
-                  {key === "training" && (
+                  {key === "training" && siteConfig.trainingUrl && (
                     <ExternalButton href={siteConfig.trainingUrl} variant="ghost" newTabLabel={tc("externalLink")}>
                       {t("trainingLink")}
                     </ExternalButton>

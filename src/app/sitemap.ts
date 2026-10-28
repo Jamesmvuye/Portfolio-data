@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const avail = availableLocales(p);
     return avail.map((l) => ({
       url: `${base}/${l}/projects/${p.slug}`,
-      lastModified: new Date(`${p.date}-01`),
+      ...(p.date ? { lastModified: new Date(`${p.date}-01`) } : {}),
       changeFrequency: "yearly" as const,
       priority: 0.6,
       alternates: alt(`/projects/${p.slug}`, avail),

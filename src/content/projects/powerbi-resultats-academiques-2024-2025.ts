@@ -5,13 +5,12 @@ export const project: Project = {
   slug: "powerbi-resultats-academiques-2024-2025",
   domain: "other",
   tools: ["Power BI"],
-  synthetic: false,
   featured: true,
   cover: "/projects/powerbi-resultats-academiques-2024-2025/images/capture.webp",
   images: [{ src: "/projects/powerbi-resultats-academiques-2024-2025/images/capture.webp", width: 1360, height: 711 }],
   files: [],
   sources: ["tbd"],
-  related: ["powerbi-surveillance-ebola-rdc","dashboard-excel-vente-2025"],
+  related: ["powerbi-surveillance-ebola-rdc", "dashboard-excel-vente-2025"],
   translations: {
       "fr": {
           "title": "Résultats académiques 2024-2025 : rapport Power BI",

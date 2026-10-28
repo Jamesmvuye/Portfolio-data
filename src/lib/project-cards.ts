@@ -12,7 +12,6 @@ export function toCard(project: Project, locale: Locale): ProjectCardData {
     title: text.title,
     summary: text.summary,
     date: project.date,
-    synthetic: project.synthetic,
     cover: project.cover,
     partial: isFallback,
   };

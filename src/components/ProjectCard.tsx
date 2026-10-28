@@ -12,7 +12,6 @@ export interface ProjectCardData {
   title: string;
   summary: string;
   date?: string;
-  synthetic: boolean;
   cover?: string;
   /** Langue demandée absente : le texte affiché est un repli. */
   partial?: boolean;
@@ -28,7 +27,6 @@ export function ProjectCard({ project }: { project: ProjectCardData }) {
       <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap items-center gap-2">
           <Badge tone="brand">{t(`domains.${project.domain}`)}</Badge>
-          {project.synthetic && <Badge tone="warn">{t("common.synthetic")}</Badge>}
           {project.partial && <Badge>{t("projectsPage.translationPartial")}</Badge>}
         </div>
         <h3 className="mt-3 font-display text-lg font-bold leading-snug text-fg">

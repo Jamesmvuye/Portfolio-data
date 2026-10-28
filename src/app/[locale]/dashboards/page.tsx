@@ -2,16 +2,12 @@ import type { Metadata } from "next";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { ArrowRight } from "lucide-react";
-import { routing } from "@/i18n/routing";
+import { routing, type Locale } from "@/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
-import { dashboards } from "@/content/dashboards";
 import { projects } from "@/content/projects";
 import { toCard } from "@/lib/project-cards";
 import { ProjectCard } from "@/components/ProjectCard";
-import type { Locale } from "@/i18n/routing";
-import { Badge, Notice, PageHeader, Section } from "@/components/ui";
-import { DashboardSection } from "@/components/dashboards/DashboardSection";
+import { PageHeader, Section } from "@/components/ui";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -24,55 +20,20 @@ export default async function DashboardsPage({ params }: { params: Promise<{ loc
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "dashboards" });
-  const tc = await getTranslations({ locale, namespace: "common" });
-  const realWork = projects.filter((p) => !p.synthetic);
 
   return (
     <>
       <PageHeader title={t("title")} lead={t("lead")} />
-      {realWork.length > 0 && (
-        <Section>
-          <h2 className="font-display text-3xl font-bold tracking-tight">{t("realTitle")}</h2>
-          <p className="mt-3 max-w-2xl text-lg text-muted">{t("realLead")}</p>
-          <ul className="mt-8 grid gap-6 md:grid-cols-2">
-            {realWork.map((p) => (
-              <li key={p.slug}>
-                <ProjectCard project={toCard(p, locale as Locale)} />
-              </li>
-            ))}
-          </ul>
-        </Section>
-      )}
-      <Section tone="alt">
-        <Notice role="status">{t("syntheticBanner")}</Notice>
-
-        {/* Galerie : aperçu de chaque dashboard, avec ancre vers la démonstration */}
-        <ul className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {dashboards.map((d) => (
-            <li key={d.id} className="group relative flex flex-col rounded-2xl border border-border bg-surface p-5 transition-all hover:-translate-y-1 hover:border-brand/60 hover:shadow-lg hover:shadow-brand/10">
-              <div className="flex flex-wrap gap-2">
-                <Badge tone="brand">{t(`tool${d.tool.charAt(0).toUpperCase()}${d.tool.slice(1)}` as "toolPowerbi")}</Badge>
-                <Badge tone="warn">{tc("synthetic")}</Badge>
-              </div>
-              <h2 className="mt-3 font-display text-lg font-bold leading-snug">
-                <a href={`#${d.id}`} className="after:absolute after:inset-0 after:content-[''] focus-visible:after:rounded-2xl">
-                  {t(`items.${d.id}.title`)}
-                </a>
-              </h2>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{t(`items.${d.id}.summary`)}</p>
-              <p className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand">
-                {t("openDemo")}
-                <ArrowRight aria-hidden className="size-4 transition-transform group-hover:translate-x-1" />
-              </p>
+      <Section>
+        <h2 className="font-display text-3xl font-bold tracking-tight">{t("realTitle")}</h2>
+        <p className="mt-3 max-w-2xl text-lg text-muted">{t("realLead")}</p>
+        <ul className="mt-8 grid gap-6 md:grid-cols-2">
+          {projects.map((p) => (
+            <li key={p.slug}>
+              <ProjectCard project={toCard(p, locale as Locale)} />
             </li>
           ))}
         </ul>
-
-        <div className="mt-12 space-y-10">
-          {dashboards.map((d) => (
-            <DashboardSection key={d.id} dashboard={d} locale={locale} />
-          ))}
-        </div>
       </Section>
     </>
   );

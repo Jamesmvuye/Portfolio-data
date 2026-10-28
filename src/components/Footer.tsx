@@ -46,10 +46,7 @@ export async function Footer({ locale }: { locale: string }) {
           <p>
             © {new Date().getFullYear()} {siteConfig.name} — {siteConfig.brand}. {t("rights")}
           </p>
-          <p>
-            {t("syntheticNote")}
-            {showTranslationNote && <> {t("translationNote")}</>}
-          </p>
+          {showTranslationNote && <p>{t("translationNote")}</p>}
         </div>
       </div>
     </footer>

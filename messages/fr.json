@@ -11,7 +11,7 @@
     },
     "dashboards": {
       "title": "Dashboards interactifs",
-      "description": "Galerie de dashboards (Power BI, Python, R, Excel) avec indicateurs, filtres et sources. Données de démonstration clairement identifiées."
+      "description": "Tableaux de bord réalisés sous Power BI et Excel : captures d'écran, méthodes et fichiers téléchargeables."
     },
     "about": {
       "title": "À propos de James Mvuye",
@@ -52,13 +52,11 @@
     "tools": "Outils",
     "domain": "Domaine",
     "date": "Date",
-    "synthetic": "Données synthétiques",
     "comingSoon": "Bientôt disponible",
     "notConfigured": "Non configuré",
     "loading": "Chargement…",
     "size": "Taille",
-    "externalLink": "s'ouvre dans un nouvel onglet",
-    "missing": "n.d."
+    "externalLink": "s'ouvre dans un nouvel onglet"
   },
   "domains": {
     "health": "Santé et épidémiologie",
@@ -81,12 +79,8 @@
   "home": {
     "featuredTitle": "Projets sélectionnés",
     "featuredLead": "Des études de cas qui montrent la démarche : question, données, méthode, résultat et limites.",
-    "syntheticNote": "Les projets marqués « Données synthétiques » utilisent des données fictives qui illustrent les méthodes, pas des résultats réels. Les autres sont des réalisations présentées par captures d'écran.",
     "skillsTitle": "Compétences et outils",
     "skillsLead": "Des outils maîtrisés au service d'une question précise, pas une liste de logos.",
-    "vizTitle": "Aperçu des visualisations",
-    "vizLead": "Un extrait interactif du dashboard commercial de démonstration (données fictives).",
-    "vizCta": "Explorer tous les dashboards",
     "servicesTitle": "Services",
     "servicesLead": "De l'analyse ponctuelle à l'accompagnement complet d'un projet de recherche ou de reporting.",
     "aboutTitle": "À propos",
@@ -134,7 +128,6 @@
     "translationPartial": "Traduction partielle"
   },
   "project": {
-    "syntheticBanner": "Projet de démonstration : toutes les données sont synthétiques (fictives). Les chiffres illustrent la méthode et ne décrivent aucune situation réelle.",
     "fallbackNotice": "Ce projet n'est pas encore disponible en {requested}. Le contenu est affiché en {shown}.",
     "summary": "Résumé",
     "context": "Contexte",
@@ -149,18 +142,14 @@
     "cleaning": "Nettoyage et préparation",
     "methodology": "Méthodologie d'analyse",
     "tools": "Outils et technologies",
-    "dashboard": "Dashboard et visualisations",
-    "dashboardText": "Démonstration interactive construite sur les données synthétiques du projet.",
-    "openDashboard": "Ouvrir le dashboard",
     "results": "Résultats",
     "recommendations": "Interprétation et recommandations",
     "limitations": "Limites de l'analyse",
     "files": "Fichiers et code source",
-    "filesLead": "Fichiers publiables uniquement. Les données sont fictives et libres d'utilisation pour s'exercer.",
+    "filesLead": "Fichiers téléchargeables de cette réalisation.",
     "github": "Code source sur GitHub",
     "githubSoon": "Dépôt GitHub bientôt disponible",
     "related": "Projets similaires",
-    "sourceSynthetic": "Jeu de données synthétique généré par script (graine fixe), sans lien avec des personnes, entreprises ou lieux réels.",
     "projectDate": "Date du projet",
     "languages": "Langues disponibles",
     "preview": "Aperçu",
@@ -183,166 +172,7 @@
   },
   "dashboards": {
     "title": "Dashboards",
-    "lead": "Galerie de démonstrations : Power BI, Python, R et Excel. Chaque dashboard précise ses objectifs, ses indicateurs et ses sources.",
-    "syntheticBanner": "Démonstrations construites avec des données synthétiques (fictives) uniquement pour illustrer les fonctionnalités.",
-    "toolPowerbi": "Power BI",
-    "toolPython": "Python",
-    "toolR": "R",
-    "toolExcel": "Excel",
-    "objectives": "Objectifs",
-    "indicators": "Indicateurs clés",
-    "source": "Source des données",
-    "sourceValue": "Données synthétiques générées par script (voir le projet associé).",
-    "openDemo": "Ouvrir la démonstration",
-    "backToGallery": "Retour à la galerie",
-    "relatedProject": "Projet associé",
-    "official": "Version officielle",
-    "powerbiMissing": "Le rapport Power BI officiel n'est pas encore publié. Il s'intègre via l'URL d'intégration autorisée (voir README). La démonstration ci-dessus reproduit ses indicateurs avec des données fictives.",
-    "externalMissing": "L'application hébergée (Streamlit, Shiny…) n'est pas encore en ligne. La démonstration ci-dessus reproduit ses indicateurs avec des données fictives.",
-    "openExternal": "Ouvrir l'application hébergée",
-    "downloadXlsx": "Télécharger le classeur Excel",
-    "loadingChart": "Chargement du graphique…",
-    "items": {
-      "sales": {
-        "title": "Performance commerciale multi-régions",
-        "summary": "Chiffre d'affaires, marge et croissance par région et catégorie.",
-        "objectives": "Suivre la performance commerciale et repérer les régions et catégories qui créent de la valeur.",
-        "indicators": [
-          "Chiffre d'affaires",
-          "Marge et taux de marge",
-          "Commandes et panier moyen",
-          "Croissance sur 12 mois"
-        ]
-      },
-      "epi": {
-        "title": "Surveillance épidémiologique hebdomadaire",
-        "summary": "Incidence par zone, moyenne mobile, seuil d'alerte et complétude.",
-        "objectives": "Détecter rapidement les hausses anormales d'incidence et suivre la qualité des rapports.",
-        "indicators": [
-          "Cas notifiés",
-          "Incidence pour 10 000 habitants",
-          "Semaines en alerte",
-          "Semaines non rapportées"
-        ]
-      },
-      "trial": {
-        "title": "Comparaison de deux groupes",
-        "summary": "Variation de score par groupe, différence de moyennes et intervalle de confiance.",
-        "objectives": "Comparer l'évolution d'un score entre groupe témoin et groupe intervention avec son incertitude.",
-        "indicators": [
-          "Effectifs et perdus de vue",
-          "Variation moyenne par groupe",
-          "Différence et IC à 95 %",
-          "Relation score initial / suivi"
-        ]
-      },
-      "budget": {
-        "title": "Suivi budgétaire d'un programme",
-        "summary": "Prévu, réalisé, écart et taux d'exécution par ligne budgétaire.",
-        "objectives": "Visualiser l'exécution budgétaire et repérer les lignes qui s'écartent du prévu.",
-        "indicators": [
-          "Budget prévu",
-          "Réalisé à ce jour",
-          "Taux d'exécution",
-          "Écart par ligne"
-        ]
-      }
-    },
-    "ui": {
-      "filters": "Filtres",
-      "all": "Toutes",
-      "year": "Année",
-      "region": "Région",
-      "category": "Catégorie",
-      "zone": "Zone",
-      "group": "Groupe",
-      "line": "Ligne budgétaire",
-      "definitions": "Définitions des indicateurs",
-      "noData": "Aucune donnée pour cette sélection.",
-      "missingData": "Donnée manquante",
-      "regions": {
-        "North": "Nord",
-        "South": "Sud",
-        "East": "Est",
-        "West": "Ouest"
-      },
-      "categories": {
-        "Hardware": "Matériel",
-        "Software": "Logiciels",
-        "Services": "Services",
-        "Training": "Formation"
-      },
-      "groups": {
-        "control": "Témoin",
-        "intervention": "Intervention"
-      },
-      "lines": {
-        "Personnel": "Personnel",
-        "Transport": "Transport",
-        "Equipment": "Équipement",
-        "Training": "Formation",
-        "Communication": "Communication",
-        "Other": "Autres"
-      },
-      "sales": {
-        "revenue": "Chiffre d'affaires",
-        "margin": "Marge",
-        "marginRate": "Taux de marge",
-        "orders": "Commandes",
-        "aov": "Panier moyen",
-        "monthlyTitle": "Chiffre d'affaires mensuel",
-        "categoryTitle": "Chiffre d'affaires par catégorie",
-        "regionTitle": "Marge par région",
-        "defRevenue": "Chiffre d'affaires : somme des ventes en dollars sur la sélection.",
-        "defMargin": "Marge : chiffre d'affaires moins coûts. Taux de marge : marge divisée par le chiffre d'affaires.",
-        "defAov": "Panier moyen : chiffre d'affaires divisé par le nombre de commandes."
-      },
-      "epi": {
-        "cases": "Cas notifiés",
-        "incidence": "Incidence moyenne",
-        "alerts": "Semaines en alerte",
-        "missing": "Semaines non rapportées",
-        "per10k": "pour 10 000 hab.",
-        "trendTitle": "Incidence hebdomadaire et seuil d'alerte",
-        "casesTitle": "Cas notifiés par semaine",
-        "incidenceSeries": "Incidence",
-        "movingAvg": "Moyenne mobile 4 sem.",
-        "threshold": "Seuil d'alerte",
-        "week": "Semaine",
-        "defIncidence": "Incidence : cas / population × 10 000. Moyenne mobile : moyenne des 4 dernières semaines (2 observations minimum).",
-        "defThreshold": "Seuil d'alerte : moyenne + 2 écarts-types de l'incidence de la zone. Les semaines non rapportées ne sont jamais comptées comme zéro cas.",
-        "missingNote": "{count, plural, =0 {Toutes les semaines sont rapportées pour cette sélection.} one {# semaine non rapportée dans cette sélection (affichée comme un vide).} other {# semaines non rapportées dans cette sélection (affichées comme des vides).}}"
-      },
-      "trial": {
-        "n": "Participants",
-        "lost": "Perdus de vue",
-        "diff": "Différence de variation",
-        "ci": "IC à 95 %",
-        "meanChange": "Variation moyenne du score",
-        "scatterTitle": "Score initial et score de suivi",
-        "meanTitle": "Variation moyenne par groupe (± IC 95 %)",
-        "baseline": "Score initial",
-        "followup": "Score de suivi",
-        "points": "points",
-        "defChange": "Variation : score de suivi moins score initial. Analyse sur cas complets.",
-        "defCi": "IC à 95 % de la différence : approximation de Welch (distribution t). Résultat indicatif sur données synthétiques.",
-        "lostNote": "{count} participant(s) sans score de suivi sont exclus des moyennes."
-      },
-      "budget": {
-        "planned": "Budget prévu",
-        "actual": "Réalisé à ce jour",
-        "rate": "Taux d'exécution",
-        "variance": "Écart",
-        "byLineTitle": "Prévu et réalisé par ligne (mois exécutés)",
-        "monthlyTitle": "Cumul mensuel prévu et réalisé",
-        "tableTitle": "Aperçu du classeur Excel",
-        "month": "Mois",
-        "planned_s": "Prévu",
-        "actual_s": "Réalisé",
-        "defRate": "Taux d'exécution : réalisé / prévu sur les mois exécutés (janvier à septembre). Écart : réalisé − prévu.",
-        "defMissing": "Les mois d'octobre à décembre n'ont pas de réalisé : ils restent vides et ne comptent pas comme zéro."
-      }
-    },
+    "lead": "Les tableaux de bord que j'ai réalisés sous Power BI et Excel, présentés par captures d'écran, avec les fichiers à télécharger lorsque leur publication est possible.",
     "realTitle": "Tableaux de bord réalisés",
     "realLead": "Des réalisations Power BI et Excel. Les fichiers sont téléchargeables lorsque leur publication est autorisée."
   },
@@ -493,7 +323,6 @@
     "navTitle": "Navigation",
     "contactTitle": "Contact",
     "rights": "Tous droits réservés.",
-    "syntheticNote": "Les démonstrations utilisent des données synthétiques.",
     "translationNote": "Traductions de travail non certifiées."
   },
   "errors": {

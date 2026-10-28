@@ -5,12 +5,11 @@ export const project: Project = {
   slug: "powerbi-kinmarche-ventes",
   domain: "business",
   tools: ["Power BI"],
-  synthetic: false,
   files: [
     { id: "pbix", kind: "pbix", path: "/projects/powerbi-kinmarche-ventes/data/kinmarche.pbix", downloadable: true },
   ],
   sources: ["tbd"],
-  related: ["dashboard-excel-ventes-interactif", "bi-ventes-multi-regions"],
+  related: ["dashboard-excel-ventes-interactif", "dashboard-excel-vente-2025"],
   translations: {
       "fr": {
           "title": "KinMarché : tableau de bord des ventes sous Power BI",

@@ -1,12 +1,12 @@
 # Portfolio de James Mvuye — LEARNMORE-DATA
 
-Portfolio professionnel de Data Analyst / Data Instructor / consultant en recherche : projets documentés, dashboards interactifs, services et contact, en **4 langues** (français par défaut, anglais, espagnol, allemand).
+Portfolio professionnel de Data Analyst / Data Instructor / consultant en recherche : projets documentés, tableaux de bord réalisés, services et contact, en **4 langues** (français par défaut, anglais, espagnol, allemand).
 
-> **Toutes les données de démonstration sont synthétiques** (fictives) et signalées comme telles sur chaque page. Aucun diplôme, certification, client, témoignage, tarif ou résultat réel n'est inventé. Les traductions EN/ES/DE sont des traductions de travail, **non certifiées**.
+> Le site ne présente que des réalisations réelles de James Mvuye (captures d'écran et fichiers). Aucun diplôme, certification, client, témoignage, tarif ou résultat n'est inventé. Les traductions EN/ES/DE sont des traductions de travail, **non certifiées**.
 
 ## Technologies
 
-Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · next-intl 4 (i18n) · Recharts 3 (graphiques) · Zod (validation) · next-themes (mode sombre) · lucide-react.
+Next.js 16 (App Router) · React 19 · TypeScript · Tailwind CSS 4 · next-intl 4 (i18n) · Zod (validation) · next-themes (mode sombre) · lucide-react.
 Pas de base de données ni d'authentification : le contenu est dans le dépôt (`src/content`, `messages`, `public`).
 
 ## Prérequis
@@ -23,7 +23,6 @@ npm run start        # sert le build
 npm run lint         # ESLint
 npm run typecheck    # TypeScript
 npm run check        # cohérence du contenu : clés de traduction identiques dans les 4 langues, fichiers de projets présents
-npm run generate:data  # régénère les jeux de données synthétiques (CSV, XLSX, JSON des dashboards)
 ```
 
 Copier `.env.example` vers `.env.local` pour les variables d'environnement (jamais committé).
@@ -35,14 +34,12 @@ messages/{fr,en,es,de}.json     Tous les textes de l'interface (une clé = 4 tra
 src/config/site.ts              Identité, liens de contact, photo, profil (langues, formations, certifications)
 src/content/projects/*.ts       Un fichier par projet (métadonnées + textes dans chaque langue)
 src/content/projects/index.ts   Registre central des projets
-src/content/dashboards.ts       Registre des dashboards (démo, Power BI, apps externes, Excel)
-src/content/data/*.json         Données synthétiques des dashboards
 src/app/[locale]/…              Pages : accueil, projects, projects/[slug], dashboards, about, services, contact
 src/app/api/contact/route.ts    Envoi du formulaire (Resend)
-src/components/                 Composants (Hero, ProjectCard, dashboards/…)
+src/components/                 Composants (Hero, ProjectCard, FileList…)
 public/projects/<slug>/…        Fichiers téléchargeables de chaque projet (data/, code/)
 public/images/                  Photo professionnelle
-scripts/                        generate-demo-data.mjs, check-content.mjs
+scripts/                        check-content.mjs
 ```
 
 Routes : `/fr`, `/en`, `/es`, `/de` puis `/projects`, `/projects/[slug]`, `/dashboards`, `/about`, `/services`, `/contact`. Le sélecteur de langue conserve la page courante.
@@ -71,8 +68,8 @@ Tant qu'elles ne sont pas toutes définies, le formulaire répond « non configu
 
 ## Ajouter un projet
 
-1. Copier un fichier de `src/content/projects/` (ex. `bi-ventes-multi-regions.ts`) et le renommer avec le **slug** du projet (le nom de fichier doit être égal au slug).
-2. Remplir les métadonnées : `domain` (`health | business | stats | gis | other`), `tools`, `date` (`AAAA-MM`), `synthetic` (`false` seulement pour de vraies données publiables), `dashboardId` (optionnel), `github` (URL du dépôt ; vide = bouton désactivé), `sources`, `related`, `cover` (image optionnelle, sinon un visuel est généré).
+1. Copier un fichier de `src/content/projects/` (ex. `powerbi-kinmarche-ventes.ts`) et le renommer avec le **slug** du projet (le nom de fichier doit être égal au slug).
+2. Remplir les métadonnées : `domain` (`health | business | stats | gis | other`), `tools`, `date` (`AAAA-MM`), `github` (URL du dépôt ; vide = bouton désactivé), `sources`, `related`, `cover` (image optionnelle, sinon un visuel est généré).
 3. Rédiger les textes dans `translations` : `fr`, `en`, `es`, `de`. Si une langue manque, la page s'affiche dans la langue par défaut avec un avis clair, sans erreur (canonical et hreflang adaptés).
 4. Déposer les fichiers dans `public/projects/<slug>/data/` (CSV, XLSX, PDF…) et `public/projects/<slug>/code/` (`.py`, `.R`, `.sql`), puis les déclarer dans `files` (`downloadable: false` pour un fichier consultable seulement). Un fichier absent s'affiche « indisponible », jamais comme un lien actif.
 5. Importer le projet dans `src/content/projects/index.ts` (liste `projects`).
@@ -88,13 +85,6 @@ Tant qu'elles ne sont pas toutes définies, le formulaire répond « non configu
 - Contenu des projets : bloc `translations` de chaque projet.
 - Ajouter une langue : `src/i18n/routing.ts` (`locales`, `localeLabels`), un fichier `messages/<code>.json`, et les traductions des projets.
 
-## Configurer les dashboards externes
-
-Dans `src/content/dashboards.ts` :
-- **Power BI** : publier le rapport puis renseigner `powerBiEmbedUrl` avec l'URL d'intégration autorisée (`https://app.powerbi.com/…`, ex. « Publier sur le web » ou intégration organisationnelle). Seuls les hôtes `app.powerbi.com`, `*.streamlit.app`, `*.shinyapps.io` et `*.hf.space` sont acceptés (cf. `frame-src` dans `next.config.ts`).
-- **Python / R** : Vercel n'exécute pas d'applications Streamlit ou Shiny. Les héberger ailleurs (Streamlit Community Cloud, shinyapps.io, Hugging Face Spaces) puis renseigner `externalAppUrl`.
-- **Excel** : le classeur est proposé en téléchargement (`downloadPath`).
-Tant qu'une URL est vide, un encart explique que la version officielle n'est pas encore publiée : la démonstration affichée est reproduite avec les données synthétiques du site.
 
 ## Déploiement (GitHub + Vercel)
 

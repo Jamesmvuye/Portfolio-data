@@ -9,13 +9,11 @@ import { routing, localeLabels, locales, type Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { alternatesFor, openGraphFor } from "@/lib/seo";
 import { availableLocales, getProject, getRelated, projects, resolveText } from "@/content/projects";
-import { getDashboard } from "@/content/dashboards";
 import { toCard } from "@/lib/project-cards";
-import { Badge, ButtonLink, DisabledButton, ExternalButton, Notice } from "@/components/ui";
+import { Badge, DisabledButton, ExternalButton, Notice } from "@/components/ui";
 import { FileList } from "@/components/FileList";
 import { ProjectCard } from "@/components/ProjectCard";
 import { ProjectCover } from "@/components/ProjectCover";
-import { LazyDashboard } from "@/components/dashboards/LazyDashboard";
 
 type Params = { locale: string; slug: string };
 
@@ -74,7 +72,6 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   const tc = await getTranslations({ locale, namespace: "common" });
   const td = await getTranslations({ locale, namespace: "domains" });
   const { text, usedLocale, isFallback } = resolveText(project, locale as Locale);
-  const dashboard = project.dashboardId ? getDashboard(project.dashboardId) : undefined;
   const related = getRelated(project);
   const date = project.date
     ? new Intl.DateTimeFormat(locale, { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${project.date}-01T00:00:00Z`))
@@ -91,7 +88,6 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
           </Link>
           <div className="mt-5 flex flex-wrap items-center gap-2">
             <Badge tone="brand">{td(project.domain)}</Badge>
-            {project.synthetic && <Badge tone="warn">{tc("synthetic")}</Badge>}
           </div>
           <h1 className="mt-4 max-w-4xl font-display text-3xl font-extrabold tracking-tight sm:text-5xl">{text.title}</h1>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted">{text.summary}</p>
@@ -115,11 +111,6 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       </header>
 
       <div className="mx-auto max-w-6xl space-y-12 px-4 py-12 sm:px-6">
-        {project.synthetic && (
-          <Notice role="status">
-            <strong>{tc("synthetic")}.</strong> {t("syntheticBanner")}
-          </Notice>
-        )}
         {isFallback && (
           <Notice tone="info" role="status">
             {t("fallbackNotice", { requested: localeLabels[locale as Locale].name, shown: localeLabels[usedLocale].name })}
@@ -164,7 +155,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
             <Block id="data" title={t("data")}>
               <p>{text.dataDescription}</p>
               <p className="text-sm text-muted">
-                <strong className="text-fg">{t("dataSources")} :</strong> {project.sources.map((s) => (s === "synthetic" ? t("sourceSynthetic") : s === "tbd" ? t("sourceTbd") : s)).join(" ")}
+                <strong className="text-fg">{t("dataSources")} :</strong> {project.sources.map((s) => (s === "tbd" ? t("sourceTbd") : s)).join(" ")}
               </p>
               {text.variables.length > 0 && (
                 <>
@@ -205,23 +196,6 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
                 <strong className="text-fg">{t("tools")} :</strong> {project.tools.join(", ")}
               </p>
             </Block>
-
-            {dashboard && (
-              <section aria-labelledby="dashboard-h" className="scroll-mt-24">
-                <h2 id="dashboard-h" className="font-display text-2xl font-bold tracking-tight">
-                  {t("dashboard")}
-                </h2>
-                <p className="mt-3 text-muted">{t("dashboardText")}</p>
-                <div className="mt-5 rounded-2xl border border-border bg-surface p-4 sm:p-5">
-                  <LazyDashboard demo={dashboard.demo} />
-                </div>
-                <div className="mt-4">
-                  <ButtonLink href={`/dashboards#${dashboard.id}`} variant="secondary">
-                    {t("openDashboard")}
-                  </ButtonLink>
-                </div>
-              </section>
-            )}
 
             <Block id="results" title={t("results")}>
               <List items={text.results} />

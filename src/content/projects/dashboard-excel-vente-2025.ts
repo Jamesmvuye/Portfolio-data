@@ -5,7 +5,6 @@ export const project: Project = {
   slug: "dashboard-excel-vente-2025",
   domain: "business",
   tools: ["Excel"],
-  synthetic: false,
   featured: true,
   cover: "/projects/dashboard-excel-vente-2025/images/capture.webp",
   images: [{ src: "/projects/dashboard-excel-vente-2025/images/capture.webp", width: 1360, height: 687 }],
@@ -13,7 +12,7 @@ export const project: Project = {
     { id: "xlsx", kind: "xlsx", path: "/projects/dashboard-excel-vente-2025/data/ventes-2025.xlsx", downloadable: true },
   ],
   sources: ["tbd"],
-  related: ["dashboard-excel-ventes-interactif","powerbi-resultats-academiques-2024-2025"],
+  related: ["dashboard-excel-ventes-interactif", "powerbi-kinmarche-ventes"],
   translations: {
       "fr": {
           "title": "Tableau de bord Excel « Vente 2025 » : gérants, produits et paiements",

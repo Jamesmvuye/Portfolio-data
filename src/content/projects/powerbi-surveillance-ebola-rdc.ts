@@ -6,7 +6,6 @@ export const project: Project = {
   domain: "health",
   tools: ["Power BI"],
   date: "2026-05",
-  synthetic: false,
   featured: true,
   cover: "/projects/powerbi-surveillance-ebola-rdc/images/capture.webp",
   images: [{ src: "/projects/powerbi-surveillance-ebola-rdc/images/capture.webp", width: 1366, height: 723 }],
@@ -14,7 +13,7 @@ export const project: Project = {
     { id: "pbix", kind: "pbix", path: "/projects/powerbi-surveillance-ebola-rdc/data/ebola-25mai.pbix", downloadable: true },
   ],
   sources: ["tbd"],
-  related: ["epidemio-surveillance-hebdomadaire","powerbi-resultats-academiques-2024-2025"],
+  related: ["powerbi-resultats-academiques-2024-2025", "dashboard-excel-vente-2025"],
   translations: {
       "fr": {
           "title": "Surveillance des cas d'Ebola en RDC : rapport Power BI",

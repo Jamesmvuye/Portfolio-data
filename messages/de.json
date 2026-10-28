@@ -11,7 +11,7 @@
     },
     "dashboards": {
       "title": "Interaktive Dashboards",
-      "description": "Dashboard-Galerie (Power BI, Python, R, Excel) mit Kennzahlen, Filtern und Quellen. Demodaten klar gekennzeichnet."
+      "description": "In Power BI und Excel erstellte Dashboards: Screenshots, Methoden und Dateien zum Download."
     },
     "about": {
       "title": "Über James Mvuye",
@@ -52,13 +52,11 @@
     "tools": "Werkzeuge",
     "domain": "Bereich",
     "date": "Datum",
-    "synthetic": "Synthetische Daten",
     "comingSoon": "Demnächst verfügbar",
     "notConfigured": "Nicht konfiguriert",
     "loading": "Wird geladen…",
     "size": "Größe",
-    "externalLink": "öffnet sich in einem neuen Tab",
-    "missing": "k. A."
+    "externalLink": "öffnet sich in einem neuen Tab"
   },
   "domains": {
     "health": "Gesundheit und Epidemiologie",
@@ -81,12 +79,8 @@
   "home": {
     "featuredTitle": "Ausgewählte Projekte",
     "featuredLead": "Fallstudien, die das Vorgehen zeigen: Fragestellung, Daten, Methode, Ergebnis und Grenzen.",
-    "syntheticNote": "Als „Synthetische Daten“ gekennzeichnete Projekte nutzen fiktive Daten, die Methoden veranschaulichen, keine realen Ergebnisse. Die übrigen sind realisierte Arbeiten, die per Screenshot gezeigt werden.",
     "skillsTitle": "Kompetenzen und Werkzeuge",
     "skillsLead": "Beherrschte Werkzeuge im Dienst einer präzisen Fragestellung, keine Logo-Wand.",
-    "vizTitle": "Vorschau der Visualisierungen",
-    "vizLead": "Ein interaktiver Ausschnitt des Demo-Vertriebsdashboards (fiktive Daten).",
-    "vizCta": "Alle Dashboards erkunden",
     "servicesTitle": "Leistungen",
     "servicesLead": "Von der punktuellen Analyse bis zur vollständigen Begleitung eines Forschungs- oder Reporting-Projekts.",
     "aboutTitle": "Über mich",
@@ -134,7 +128,6 @@
     "translationPartial": "Teilweise übersetzt"
   },
   "project": {
-    "syntheticBanner": "Demonstrationsprojekt: Alle Daten sind synthetisch (fiktiv). Die Zahlen veranschaulichen die Methode und beschreiben keine reale Situation.",
     "fallbackNotice": "Dieses Projekt ist noch nicht auf {requested} verfügbar. Der Inhalt wird auf {shown} angezeigt.",
     "summary": "Zusammenfassung",
     "context": "Kontext",
@@ -149,18 +142,14 @@
     "cleaning": "Bereinigung und Aufbereitung",
     "methodology": "Analysemethodik",
     "tools": "Werkzeuge und Technologien",
-    "dashboard": "Dashboard und Visualisierungen",
-    "dashboardText": "Interaktive Demonstration auf Basis der synthetischen Projektdaten.",
-    "openDashboard": "Dashboard öffnen",
     "results": "Ergebnisse",
     "recommendations": "Interpretation und Empfehlungen",
     "limitations": "Grenzen der Analyse",
     "files": "Dateien und Quellcode",
-    "filesLead": "Es werden nur veröffentlichbare Dateien angeboten. Die Daten sind fiktiv und frei zum Üben nutzbar.",
+    "filesLead": "Dateien zum Download für dieses Projekt.",
     "github": "Quellcode auf GitHub",
     "githubSoon": "GitHub-Repository folgt",
     "related": "Ähnliche Projekte",
-    "sourceSynthetic": "Synthetischer, per Skript erzeugter Datensatz (fester Seed), ohne Bezug zu realen Personen, Unternehmen oder Orten.",
     "projectDate": "Projektdatum",
     "languages": "Verfügbare Sprachen",
     "preview": "Vorschau",
@@ -183,166 +172,7 @@
   },
   "dashboards": {
     "title": "Dashboards",
-    "lead": "Demo-Galerie: Power BI, Python, R und Excel. Jedes Dashboard nennt seine Ziele, Kennzahlen und Quellen.",
-    "syntheticBanner": "Demos ausschließlich mit synthetischen (fiktiven) Daten, um Funktionen zu veranschaulichen.",
-    "toolPowerbi": "Power BI",
-    "toolPython": "Python",
-    "toolR": "R",
-    "toolExcel": "Excel",
-    "objectives": "Ziele",
-    "indicators": "Wichtige Kennzahlen",
-    "source": "Datenquelle",
-    "sourceValue": "Per Skript erzeugte synthetische Daten (siehe zugehöriges Projekt).",
-    "openDemo": "Demo öffnen",
-    "backToGallery": "Zurück zur Galerie",
-    "relatedProject": "Zugehöriges Projekt",
-    "official": "Offizielle Version",
-    "powerbiMissing": "Der offizielle Power-BI-Bericht ist noch nicht veröffentlicht. Er wird über die autorisierte Einbettungs-URL eingebunden (siehe README). Die obige Demo bildet seine Kennzahlen mit fiktiven Daten nach.",
-    "externalMissing": "Die gehostete Anwendung (Streamlit, Shiny …) ist noch nicht online. Die obige Demo bildet ihre Kennzahlen mit fiktiven Daten nach.",
-    "openExternal": "Gehostete Anwendung öffnen",
-    "downloadXlsx": "Excel-Arbeitsmappe herunterladen",
-    "loadingChart": "Diagramm wird geladen…",
-    "items": {
-      "sales": {
-        "title": "Vertriebsleistung über mehrere Regionen",
-        "summary": "Umsatz, Marge und Wachstum nach Region und Kategorie.",
-        "objectives": "Die Vertriebsleistung verfolgen und die Regionen und Kategorien erkennen, die Wert schaffen.",
-        "indicators": [
-          "Umsatz",
-          "Marge und Margenquote",
-          "Bestellungen und Bestellwert",
-          "12-Monats-Wachstum"
-        ]
-      },
-      "epi": {
-        "title": "Wöchentliche epidemiologische Überwachung",
-        "summary": "Inzidenz je Zone, gleitendes Mittel, Alarmschwelle und Vollständigkeit.",
-        "objectives": "Ungewöhnliche Inzidenzanstiege schnell erkennen und die Qualität der Meldungen überwachen.",
-        "indicators": [
-          "Gemeldete Fälle",
-          "Inzidenz pro 10.000 Einwohner",
-          "Alarmwochen",
-          "Nicht gemeldete Wochen"
-        ]
-      },
-      "trial": {
-        "title": "Vergleich zweier Gruppen",
-        "summary": "Score-Veränderung je Gruppe, Mittelwertdifferenz und Konfidenzintervall.",
-        "objectives": "Die Veränderung eines Scores zwischen Kontroll- und Interventionsgruppe samt Unsicherheit vergleichen.",
-        "indicators": [
-          "Gruppengrößen und Verluste",
-          "Mittlere Veränderung je Gruppe",
-          "Differenz und 95-%-KI",
-          "Zusammenhang Ausgangs-/Follow-up-Score"
-        ]
-      },
-      "budget": {
-        "title": "Budgetverfolgung eines Programms",
-        "summary": "Plan, Ist, Abweichung und Ausführungsquote je Budgetposition.",
-        "objectives": "Die Budgetausführung visualisieren und Positionen erkennen, die vom Plan abweichen.",
-        "indicators": [
-          "Geplantes Budget",
-          "Ist bis heute",
-          "Ausführungsquote",
-          "Abweichung je Position"
-        ]
-      }
-    },
-    "ui": {
-      "filters": "Filter",
-      "all": "Alle",
-      "year": "Jahr",
-      "region": "Region",
-      "category": "Kategorie",
-      "zone": "Zone",
-      "group": "Gruppe",
-      "line": "Budgetposition",
-      "definitions": "Definitionen der Kennzahlen",
-      "noData": "Keine Daten für diese Auswahl.",
-      "missingData": "Fehlende Daten",
-      "regions": {
-        "North": "Nord",
-        "South": "Süd",
-        "East": "Ost",
-        "West": "West"
-      },
-      "categories": {
-        "Hardware": "Hardware",
-        "Software": "Software",
-        "Services": "Dienstleistungen",
-        "Training": "Schulung"
-      },
-      "groups": {
-        "control": "Kontrolle",
-        "intervention": "Intervention"
-      },
-      "lines": {
-        "Personnel": "Personal",
-        "Transport": "Transport",
-        "Equipment": "Ausstattung",
-        "Training": "Schulung",
-        "Communication": "Kommunikation",
-        "Other": "Sonstiges"
-      },
-      "sales": {
-        "revenue": "Umsatz",
-        "margin": "Marge",
-        "marginRate": "Margenquote",
-        "orders": "Bestellungen",
-        "aov": "Durchschnittlicher Bestellwert",
-        "monthlyTitle": "Monatsumsatz",
-        "categoryTitle": "Umsatz nach Kategorie",
-        "regionTitle": "Marge nach Region",
-        "defRevenue": "Umsatz: Summe der Verkäufe in US-Dollar in der Auswahl.",
-        "defMargin": "Marge: Umsatz minus Kosten. Margenquote: Marge geteilt durch Umsatz.",
-        "defAov": "Durchschnittlicher Bestellwert: Umsatz geteilt durch die Anzahl der Bestellungen."
-      },
-      "epi": {
-        "cases": "Gemeldete Fälle",
-        "incidence": "Mittlere Inzidenz",
-        "alerts": "Alarmwochen",
-        "missing": "Nicht gemeldete Wochen",
-        "per10k": "pro 10.000 Einw.",
-        "trendTitle": "Wöchentliche Inzidenz und Alarmschwelle",
-        "casesTitle": "Gemeldete Fälle pro Woche",
-        "incidenceSeries": "Inzidenz",
-        "movingAvg": "Gleitendes Mittel 4 Wo.",
-        "threshold": "Alarmschwelle",
-        "week": "Woche",
-        "defIncidence": "Inzidenz: Fälle / Bevölkerung × 10.000. Gleitendes Mittel: Mittelwert der letzten 4 Wochen (mindestens 2 Beobachtungen).",
-        "defThreshold": "Alarmschwelle: Mittelwert + 2 Standardabweichungen der Inzidenz der Zone. Nicht gemeldete Wochen zählen nie als null Fälle.",
-        "missingNote": "{count, plural, =0 {Alle Wochen sind für diese Auswahl gemeldet.} one {# nicht gemeldete Woche in dieser Auswahl (als Lücke dargestellt).} other {# nicht gemeldete Wochen in dieser Auswahl (als Lücken dargestellt).}}"
-      },
-      "trial": {
-        "n": "Teilnehmende",
-        "lost": "Verluste (Follow-up)",
-        "diff": "Differenz der Veränderung",
-        "ci": "95-%-KI",
-        "meanChange": "Mittlere Score-Veränderung",
-        "scatterTitle": "Ausgangs- und Follow-up-Score",
-        "meanTitle": "Mittlere Veränderung je Gruppe (± 95-%-KI)",
-        "baseline": "Ausgangsscore",
-        "followup": "Follow-up-Score",
-        "points": "Punkte",
-        "defChange": "Veränderung: Follow-up-Score minus Ausgangsscore. Analyse vollständiger Fälle.",
-        "defCi": "95-%-KI der Differenz: Welch-Näherung (t-Verteilung). Orientierender Wert auf synthetischen Daten.",
-        "lostNote": "{count} Teilnehmende ohne Follow-up-Score sind von den Mittelwerten ausgeschlossen."
-      },
-      "budget": {
-        "planned": "Geplantes Budget",
-        "actual": "Ist bis heute",
-        "rate": "Ausführungsquote",
-        "variance": "Abweichung",
-        "byLineTitle": "Plan und Ist je Position (ausgeführte Monate)",
-        "monthlyTitle": "Kumulierter Plan und Ist je Monat",
-        "tableTitle": "Vorschau der Excel-Arbeitsmappe",
-        "month": "Monat",
-        "planned_s": "Plan",
-        "actual_s": "Ist",
-        "defRate": "Ausführungsquote: Ist / Plan über die ausgeführten Monate (Januar bis September). Abweichung: Ist − Plan.",
-        "defMissing": "Für Oktober bis Dezember gibt es kein Ist: Sie bleiben leer und zählen nicht als null."
-      }
-    },
+    "lead": "Dashboards, die ich in Power BI und Excel erstellt habe, mit Screenshots und – sofern eine Veröffentlichung möglich ist – Dateien zum Download.",
     "realTitle": "Realisierte Dashboards",
     "realLead": "Power-BI- und Excel-Arbeiten. Dateien sind herunterladbar, sofern ihre Veröffentlichung erlaubt ist."
   },
@@ -493,7 +323,6 @@
     "navTitle": "Navigation",
     "contactTitle": "Kontakt",
     "rights": "Alle Rechte vorbehalten.",
-    "syntheticNote": "Die Demos nutzen synthetische Daten.",
     "translationNote": "Arbeitsübersetzungen, nicht zertifiziert."
   },
   "errors": {

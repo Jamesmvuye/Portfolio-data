@@ -10,8 +10,7 @@ import { projects } from "@/content/projects";
 import { toCard } from "@/lib/project-cards";
 import { Hero } from "@/components/Hero";
 import { ProjectCard } from "@/components/ProjectCard";
-import { ButtonLink, Notice, Section, SectionHeading } from "@/components/ui";
-import { LazyDashboard } from "@/components/dashboards/LazyDashboard";
+import { ButtonLink, Section, SectionHeading } from "@/components/ui";
 import { serviceIcons, serviceKeys } from "@/components/ServiceCards";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -60,9 +59,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <ProjectCard key={p.slug} project={toCard(p, l)} />
           ))}
         </div>
-        <div className="mt-6">
-          <Notice tone="info">{t("syntheticNote")}</Notice>
-        </div>
       </Section>
 
       <Section id="skills" tone="alt">
@@ -87,22 +83,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             </li>
           ))}
         </ul>
-      </Section>
-
-      <Section id="viz">
-        <SectionHeading
-          title={t("vizTitle")}
-          lead={t("vizLead")}
-          action={
-            <ButtonLink href="/dashboards" variant="secondary">
-              {t("vizCta")}
-              <ArrowRight aria-hidden className="size-4" />
-            </ButtonLink>
-          }
-        />
-        <div className="rounded-3xl border border-border bg-surface p-4 sm:p-6">
-          <LazyDashboard demo="sales" />
-        </div>
       </Section>
 
       <Section id="services" tone="alt">

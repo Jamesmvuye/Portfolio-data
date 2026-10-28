@@ -5,14 +5,13 @@ export const project: Project = {
   slug: "dashboard-excel-ventes-interactif",
   domain: "business",
   tools: ["Excel"],
-  synthetic: false,
   cover: "/projects/dashboard-excel-ventes-interactif/images/capture.webp",
   images: [{ src: "/projects/dashboard-excel-ventes-interactif/images/capture.webp", width: 1360, height: 681 }],
   files: [
     { id: "xlsx", kind: "xlsx", path: "/projects/dashboard-excel-ventes-interactif/data/tableau-de-bord-ventes.xlsx", downloadable: true },
   ],
   sources: ["tbd"],
-  related: ["dashboard-excel-vente-2025","bi-ventes-multi-regions"],
+  related: ["dashboard-excel-vente-2025", "powerbi-kinmarche-ventes"],
   translations: {
       "fr": {
           "title": "Tableau de bord interactif des ventes sous Excel (2020-2021)",
